@@ -209,6 +209,7 @@ function updateWishlistBadges() {
 }
 
 function openWishlistDrawer() {
+  injectGlobalOverlaysIfMissing();
   const drawer = document.getElementById('wishlistDrawer');
   const overlay = document.getElementById('wishlistOverlay');
   if (drawer && overlay) {
@@ -274,6 +275,7 @@ function shareWishlistToWhatsApp() {
 
 // Concierge Live Search Engine
 function openConciergeSearch() {
+  injectGlobalOverlaysIfMissing();
   const modal = document.getElementById('searchModal');
   if (modal) {
     modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -333,6 +335,7 @@ function renderSearchResults(query) {
 
 // Salon Suite Appointment Modal
 function openSalonAppointmentModal(presetOccasion) {
+  injectGlobalOverlaysIfMissing();
   const modal = document.getElementById('salonModal');
   if (modal) {
     modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -465,6 +468,7 @@ function updatePdpWishlistState(id) {
 
 // Mobile Navigation Drawer Toggle
 function toggleMobileNav() {
+  injectGlobalOverlaysIfMissing();
   const drawer = document.getElementById('mobileNavDrawer');
   const overlay = document.getElementById('mobileNavOverlay');
   if (drawer && overlay) {
@@ -863,6 +867,202 @@ function injectFloatingWhatsAppWidget() {
 }
 
 /* ==========================================================================
+   GLOBAL OVERLAYS INJECTOR (FALLBACK FOR ANY PAGE MISSING OVERLAYS)
+   ========================================================================== */
+function injectGlobalOverlaysIfMissing() {
+  // 1. Concierge Search Modal
+  if (!document.getElementById('searchModal')) {
+    const searchModal = document.createElement('div');
+    searchModal.id = 'searchModal';
+    searchModal.className = 'fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-start justify-center pt-20 px-4 sm:px-6';
+    searchModal.innerHTML = `
+      <div class="relative w-full max-w-2xl bg-[#1a1514] border border-[#e7c185]/40 text-[#fbf9f6] p-6 sm:p-8 shadow-2xl">
+        <div class="flex items-center justify-between pb-4 border-b border-[#e7c185]/20 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#ffd799] animate-pulse"></span>
+            <span class="text-[10px] tracking-[0.28em] uppercase text-[#ffd799] font-medium">Concierge Archive Search</span>
+          </div>
+          <button onclick="closeConciergeSearch()" class="p-1 text-[#fbf9f6]/70 hover:text-white transition-colors cursor-pointer" aria-label="Close search">
+            <span class="material-symbols-outlined text-[22px]">close</span>
+          </button>
+        </div>
+        <div class="relative mb-6">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#ffd799] text-[20px]">search</span>
+          <input type="text" id="conciergeSearchInput" oninput="renderSearchResults(this.value)" placeholder="Search silhouettes, zardozi, mulberry silk, lehengas..." class="w-full pl-12 pr-4 py-3.5 bg-[#251f1c] border border-[#e7c185]/30 focus:border-[#ffd799] text-white text-[13px] tracking-wide placeholder:text-white/40 focus:outline-none transition-colors" />
+        </div>
+        <div class="flex flex-wrap items-center gap-2 mb-4 pb-3 border-b border-[#e7c185]/15 text-[10px] uppercase tracking-wider text-white/60">
+          <span class="text-[#ffd799]">Curations:</span>
+          <button onclick="document.getElementById('conciergeSearchInput').value='Lehenga'; renderSearchResults('Lehenga');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Lehenga</button>
+          <button onclick="document.getElementById('conciergeSearchInput').value='Zardozi'; renderSearchResults('Zardozi');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Zardozi</button>
+          <button onclick="document.getElementById('conciergeSearchInput').value='Sharara'; renderSearchResults('Sharara');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Sharara</button>
+          <button onclick="document.getElementById('conciergeSearchInput').value='Cape'; renderSearchResults('Cape');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Cape</button>
+          <button onclick="document.getElementById('conciergeSearchInput').value='Silk'; renderSearchResults('Silk');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Mulberry Silk</button>
+        </div>
+        <div id="searchResultsContainer" class="max-h-[50vh] overflow-y-auto space-y-2 pr-1"></div>
+      </div>
+    `;
+    document.body.appendChild(searchModal);
+  }
+
+  // 2. Personal Archive / Wishlist Drawer
+  if (!document.getElementById('wishlistDrawer')) {
+    const wishlistOverlay = document.createElement('div');
+    wishlistOverlay.id = 'wishlistOverlay';
+    wishlistOverlay.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300';
+    wishlistOverlay.onclick = closeWishlistDrawer;
+
+    const wishlistDrawer = document.createElement('aside');
+    wishlistDrawer.id = 'wishlistDrawer';
+    wishlistDrawer.className = 'fixed top-0 right-0 bottom-0 w-96 max-w-[90vw] bg-[#fbf9f6] border-l border-[#e7c185]/40 z-50 translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 shadow-2xl';
+    wishlistDrawer.innerHTML = `
+      <div>
+        <div class="flex items-center justify-between pb-5 border-b border-[#e7c185]/30">
+          <div>
+            <span class="block font-editorial text-2xl tracking-[0.2em] uppercase text-[#120e0d]">Personal Archive</span>
+            <span class="block text-[9px] tracking-[0.3em] uppercase text-[#765928] font-medium mt-0.5">Curated Silhouettes (<span class="wishlist-count-badge">0</span>)</span>
+          </div>
+          <button onclick="closeWishlistDrawer()" class="p-2 text-primary hover:text-secondary cursor-pointer" aria-label="Close Archive">
+            <span class="material-symbols-outlined text-[24px]">close</span>
+          </button>
+        </div>
+        <div id="wishlistItemsContainer" class="max-h-[62vh] overflow-y-auto divide-y divide-[#e7c185]/20 py-2 pr-1"></div>
+      </div>
+      <div class="pt-5 border-t border-[#e7c185]/30 space-y-3">
+        <button onclick="shareWishlistToWhatsApp()" class="w-full py-3.5 bg-[#1f1b19] hover:bg-black text-[#ffd799] hover:text-white text-[11px] tracking-[0.24em] uppercase font-medium flex items-center justify-center gap-2 border border-[#765928]/40 transition-all shadow-md cursor-pointer">
+          <span class="material-symbols-outlined text-[17px]">forum</span>
+          <span>Inquire Archive on WhatsApp</span>
+        </button>
+        <a href="collections.html" onclick="closeWishlistDrawer()" class="block text-center text-[10px] tracking-[0.22em] uppercase text-outline hover:text-primary transition-colors py-1">Browse More Silhouettes →</a>
+      </div>
+    `;
+    document.body.appendChild(wishlistOverlay);
+    document.body.appendChild(wishlistDrawer);
+  }
+
+  // 3. Private Salon Suite Modal
+  if (!document.getElementById('salonModal')) {
+    const salonModal = document.createElement('div');
+    salonModal.id = 'salonModal';
+    salonModal.className = 'fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4';
+    salonModal.innerHTML = `
+      <div class="relative w-full max-w-lg bg-[#fbf9f6] border border-[#e7c185]/50 p-6 sm:p-8 shadow-2xl">
+        <div class="flex items-start justify-between pb-4 border-b border-[#e7c185]/30 mb-6">
+          <div>
+            <span class="text-[9px] tracking-[0.32em] uppercase text-[#765928] font-semibold block">Sindhu Bhavan Road Flagship</span>
+            <h3 class="font-editorial text-[26px] text-primary font-normal leading-tight">Private Salon Suite</h3>
+            <p class="text-[12px] text-outline font-light mt-1">Four Private Consultations Daily · Strictly Reserved</p>
+          </div>
+          <button onclick="closeSalonAppointmentModal()" class="p-1 text-primary hover:text-secondary cursor-pointer" aria-label="Close">
+            <span class="material-symbols-outlined text-[22px]">close</span>
+          </button>
+        </div>
+        <form onsubmit="submitSalonBooking(event)" class="space-y-4 text-left">
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Patron Full Name *</label>
+            <input type="text" id="salonNameInput" required placeholder="e.g. Radhika Ambani" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary" />
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">WhatsApp / Phone Number *</label>
+            <input type="tel" id="salonPhoneInput" required placeholder="e.g. +91 99250 00297" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary" />
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Occasion / Consultation Focus</label>
+            <select id="salonOccasionSelect" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary">
+              <option value="Bridal Trousseau Fitting">Bridal Trousseau Fitting (Wedding / Pheras)</option>
+              <option value="Sangeet & Cocktail Couture">Sangeet &amp; Cocktail Couture</option>
+              <option value="Heirloom Festive Pret">Heirloom Festive Pret / Mehendi</option>
+              <option value="Diaspora Virtual Video Consultation">Diaspora Virtual Video Consultation (Worldwide)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Preferred Date / Month</label>
+            <input type="date" id="salonDateInput" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary" />
+          </div>
+          <div class="pt-4">
+            <button type="submit" class="w-full py-3.5 bg-[#1f1b19] hover:bg-black text-[#ffd799] hover:text-white text-[11px] tracking-[0.24em] uppercase font-medium flex items-center justify-center gap-2 border border-[#765928]/40 transition-all shadow-md cursor-pointer">
+              <span class="material-symbols-outlined text-[17px]">event_seat</span>
+              <span>Confirm Salon Request on WhatsApp</span>
+            </button>
+            <p class="text-center text-[10px] text-outline mt-2 italic">Creative Director Mita Manglani &amp; senior drapers personally attend every reserved fitting.</p>
+          </div>
+        </form>
+      </div>
+    `;
+    document.body.appendChild(salonModal);
+  }
+
+  // 4. Responsive Mobile Nav Drawer
+  if (!document.getElementById('mobileNavDrawer')) {
+    const mobileNavOverlay = document.createElement('div');
+    mobileNavOverlay.id = 'mobileNavOverlay';
+    mobileNavOverlay.className = 'fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden';
+    mobileNavOverlay.onclick = toggleMobileNav;
+
+    const mobileNavDrawer = document.createElement('aside');
+    mobileNavDrawer.id = 'mobileNavDrawer';
+    mobileNavDrawer.className = 'fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-[#fbf9f6] border-r border-[#e7c185]/40 z-50 -translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 shadow-2xl lg:hidden';
+    mobileNavDrawer.innerHTML = `
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-[#e7c185]/30">
+          <div>
+            <span class="block font-editorial text-2xl tracking-[0.3em] uppercase text-[#120e0d]">M · O · H</span>
+            <span class="block text-[9px] tracking-[0.35em] uppercase text-[#765928] font-medium mt-0.5">Atelier Ahmedabad</span>
+          </div>
+          <button onclick="toggleMobileNav()" class="p-2 text-primary hover:text-secondary cursor-pointer" aria-label="Close Menu">
+            <span class="material-symbols-outlined text-[24px]">close</span>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 py-8 text-[12px] tracking-[0.24em] uppercase font-medium">
+          <a href="index.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+            <span>Home Anthology</span>
+            <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+          </a>
+          <a href="collections.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+            <span>The Collections</span>
+            <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+          </a>
+          <a href="atelier.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+            <span>Craft &amp; Guild Heritage</span>
+            <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+          </a>
+          <button onclick="toggleMobileNav(); openCartDrawer();" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between text-left cursor-pointer">
+            <span class="flex items-center gap-2">Maison Bag (<span class="cart-count-badge">0</span>)</span>
+            <span class="material-symbols-outlined text-[16px] text-[#765928]">shopping_bag</span>
+          </button>
+          <a href="checkout.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+            <span>Checkout Summary</span>
+            <span class="material-symbols-outlined text-[16px] text-[#765928]">credit_card</span>
+          </a>
+          <button onclick="toggleMobileNav(); openSalonAppointmentModal();" class="text-[#765928] hover:text-primary py-1 flex items-center justify-between font-semibold text-left cursor-pointer">
+            <span>Private Salon Suite</span>
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+          </button>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-[#e7c185]/30 space-y-4">
+        <div class="flex items-center justify-between text-[11px] tracking-[0.2em] uppercase text-outline">
+          <span>Currency:</span>
+          <div class="flex items-center gap-2">
+            <button onclick="setCurrency('INR')" class="currency-inr-btn font-bold text-primary">INR ₹</button>
+            <span>/</span>
+            <button onclick="setCurrency('USD')" class="currency-usd-btn text-outline">USD $</button>
+          </div>
+        </div>
+        <a href="https://wa.me/919925000297?text=Hello%20MOH%20Atelier%20Ahmedabad%2C%20I%20would%20like%20to%20inquire%20about%20a%20private%20bridal%20appointment." target="_blank" class="w-full py-3 bg-[#1f1b19] text-[#ffd799] text-[10px] tracking-[0.24em] uppercase font-medium flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[16px]">forum</span>
+          <span>WhatsApp Concierge (+91 99250 00297)</span>
+        </a>
+        <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 border border-[#765928]/30 hover:border-primary text-secondary hover:text-primary text-[10px] tracking-[0.22em] uppercase font-medium flex items-center justify-center gap-2 transition-colors">
+          <span>Follow @mohstudioahmedabad</span>
+        </a>
+      </div>
+    `;
+    document.body.appendChild(mobileNavOverlay);
+    document.body.appendChild(mobileNavDrawer);
+  }
+}
+
+/* ==========================================================================
    CHECKOUT PAGE SUMMARY INITIALIZATION (checkout.html)
    ========================================================================== */
 function initCheckoutPage() {
@@ -1079,6 +1279,16 @@ function injectMobileResponsiveCSS() {
     h1, h2, h3, h4, p {
       overflow-wrap: break-word;
     }
+
+    /* PDP Mobile Polish */
+    @media (max-width: 640px) {
+      .gallery-thumb { aspect-ratio: 4/5 !important; }
+      #bespokeTailorCard { padding: 0.875rem !important; }
+      #mainCoutureImage { object-position: top center !important; }
+      #fitModal .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+      #lightboxModal img { max-height: 70vh !important; }
+      .standard-size-tab { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+    }
   `;
   document.head.appendChild(style);
 }
@@ -1086,6 +1296,7 @@ function injectMobileResponsiveCSS() {
 // Global DOM Initialization
 document.addEventListener('DOMContentLoaded', () => {
   injectMobileResponsiveCSS();
+  injectGlobalOverlaysIfMissing();
   updateCurrencyDisplay();
   updateWishlistBadges();
   updateCartBadges();
