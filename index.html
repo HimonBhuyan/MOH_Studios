@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MOH Atelier Ahmedabad | Haute Couture &amp; Bridal Heirlooms</title>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #fbf9f6;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .gold-shimmer {
+      background: linear-gradient(135deg, #e7c185 0%, #ffd799 45%, #765928 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hairline-gold {
+      border-color: rgba(231, 193, 133, 0.35);
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#281900",
+            "tertiary-fixed-dim": "#e2c381",
+            "on-primary": "#ffffff",
+            "background": "#fbf9f6",
+            "surface-container": "#efeeeb",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#eae1dd",
+            "secondary-fixed-dim": "#e7c185",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#ffdeac",
+            "on-tertiary-fixed-variant": "#59440e",
+            "surface-dim": "#dbdad7",
+            "tertiary-fixed": "#ffdf9b",
+            "on-tertiary-fixed": "#251a00",
+            "on-secondary-container": "#795c2a",
+            "outline": "#7f7570",
+            "surface-container-low": "#f5f3f0",
+            "surface": "#fbf9f6",
+            "on-surface-variant": "#4d4541",
+            "on-secondary-fixed-variant": "#5c4212",
+            "primary-container": "#1f1b19",
+            "inverse-on-surface": "#f2f0ed",
+            "primary-fixed-dim": "#cec5c1",
+            "on-primary-container": "#8a827f",
+            "on-background": "#1b1c1a",
+            "tertiary-container": "#251a00",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#d0c4be",
+            "inverse-surface": "#30312f",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#9b8146",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e4e2df",
+            "secondary-container": "#ffd799",
+            "on-primary-fixed-variant": "#4b4643",
+            "on-error": "#ffffff",
+            "inverse-primary": "#cec5c1",
+            "surface-bright": "#fbf9f6",
+            "surface-variant": "#e4e2df",
+            "surface-container-high": "#eae8e5",
+            "surface-tint": "#635d5a",
+            "secondary": "#765928",
+            "tertiary": "#000000",
+            "primary": "#120e0d",
+            "on-primary-fixed": "#1f1b19",
+            "error-container": "#ffdad6",
+            "on-surface": "#1b1c1a"
+          },
+          fontFamily: {
+            "editorial": ["Bodoni Moda", "Didot", "serif"],
+            "sans": ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Hanken+Grotesk:ital,wght@0,200..700;1,300..500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..500,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased selection:bg-secondary-fixed/40 selection:text-primary">
+<!-- 1. ULTRA-REFINED MAISON HEADER & NAVIGATION -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#fbf9f6]/95 backdrop-blur-md border-b border-[#e7c185]/30">
+<!-- Top Micro Concierge Tier -->
+<div class="w-full bg-[#161211] text-[#e7c185]/90 px-4 sm:px-6 lg:px-16 py-2 flex items-center justify-between text-[11px] tracking-[0.22em] uppercase font-light border-b border-[#765928]/25">
+<div class="flex items-center gap-3">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#e7c185]/80 animate-pulse"></span>
+<span class="text-[#fbf9f6]/80 hidden md:inline">AHMEDABAD ATELIER · PRIVATE SALON</span>
+<span class="text-[#fbf9f6]/80 md:hidden">MOH ATELIER</span>
+</div>
+<div class="flex items-center gap-3 sm:gap-6">
+<a class="hover:text-white transition-colors flex items-center gap-1.5" href="https://wa.me/919925000297" target="_blank">
+<span class="material-symbols-outlined text-[13px] text-[#e7c185]">forum</span>
+<span class="hidden sm:inline">WhatsApp Concierge (+91 99250 00297)</span>
+</a>
+<span class="moh-concierge-sep text-[#765928]/60">|</span>
+<div class="moh-currency-row flex items-center gap-2 tracking-[0.16em]">
+<button onclick="setCurrency('INR')" class="currency-inr-btn font-normal text-white">INR ₹</button>
+<span class="text-white/30">/</span>
+<button onclick="setCurrency('USD')" class="currency-usd-btn text-[#fbf9f6]/60 hover:text-white transition-colors">USD $</button>
+</div>
+</div>
+</div>
+<!-- Centered Haute Couture Identity -->
+<div class="moh-header-mid pt-3 sm:pt-5 pb-3 sm:pb-4 px-4 sm:px-6 lg:px-16 flex items-center justify-between border-b border-[#e7c185]/20">
+<!-- Left Utility -->
+<div class="moh-left-utility flex items-center gap-3 sm:gap-5 w-1/4">
+<button onclick="toggleMobileNav()" class="lg:hidden p-1.5 text-primary hover:text-secondary" aria-label="Open Navigation">
+  <span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<button onclick="openConciergeSearch()" class="flex items-center gap-2 group text-left cursor-pointer">
+<span class="material-symbols-outlined text-[18px] sm:text-[20px] text-primary group-hover:text-secondary transition-colors">search</span>
+<span class="text-[11px] tracking-[0.24em] uppercase text-on-surface-variant group-hover:text-primary transition-colors hidden xl:inline">Concierge Search</span>
+</button>
+</div>
+<!-- Center Maison Seal & Wordmark -->
+<div class="text-center flex-1 flex flex-col items-center">
+<a class="inline-block group" href="index.html">
+<span class="moh-logo-wordmark block font-editorial text-[26px] sm:text-[34px] md:text-[38px] tracking-[0.32em] sm:tracking-[0.38em] text-primary font-normal leading-none group-hover:text-secondary transition-colors duration-500 pl-1 sm:pl-2" style="font-family: 'Bodoni Moda', Didot, serif;">M · O · H</span>
+<span class="moh-logo-sub block text-[8px] sm:text-[10px] md:text-[11px] tracking-[0.3em] sm:tracking-[0.42em] uppercase text-[#765928] font-medium mt-1">A T E L I E R · A H M E D A B A D</span>
+</a>
+</div>
+<!-- Right Actions: Wishlist, Maison Bag & Private Suite -->
+<div class="moh-right-utility flex items-center justify-end gap-2 sm:gap-3 md:gap-6 w-1/4">
+<button onclick="openWishlistDrawer()" class="relative group p-1 flex items-center gap-1 cursor-pointer text-left" title="Personal Archive">
+<span class="material-symbols-outlined text-[19px] sm:text-[20px] text-primary group-hover:text-secondary transition-colors">favorite</span>
+<span class="wishlist-count-badge w-4 h-4 rounded-full bg-[#765928] text-white text-[9px] flex items-center justify-center font-sans tracking-tight">0</span>
+</button>
+<!-- Maison Bag Trigger -->
+<button onclick="openCartDrawer()" class="relative group p-1 flex items-center gap-1 cursor-pointer text-left transition-colors" title="View Maison Bag">
+<span class="material-symbols-outlined text-[19px] sm:text-[21px] text-primary group-hover:text-secondary transition-colors">shopping_bag</span>
+<span class="cart-count-badge w-4 h-4 rounded-full bg-[#1f1b19] text-[#ffd799] text-[9px] flex items-center justify-center font-bold border border-[#765928]/40">0</span>
+</button>
+<button onclick="openSalonAppointmentModal()" class="hidden sm:inline-flex items-center px-3 lg:px-4 py-2 border border-[#765928]/40 hover:border-[#1f1b19] bg-[#1f1b19] hover:bg-black text-[#ffdeac] hover:text-white transition-all duration-300 text-[10px] tracking-[0.22em] uppercase font-medium cursor-pointer">
+          Salon Suite
+</button>
+</div>
+</div>
+<!-- Architectural Navigation Bar -->
+<nav class="hidden lg:flex items-center justify-center gap-8 py-3 bg-[#fbf9f6]/90">
+<a class="relative text-[10.5px] tracking-[0.22em] uppercase text-[#765928] font-medium transition-colors pb-1 group" href="index.html">
+        Home
+        <span class="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#765928]"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[10.5px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="collections.html">
+        Collections
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[10.5px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="collections.html#bridal-trousseau">
+        Bridal &amp; Trousseau
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[10.5px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="product.html">
+        Bespoke Silhouette
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[10.5px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="atelier.html">
+        Craft &amp; Guild Heritage
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<button onclick="openSalonAppointmentModal()" class="relative text-[10.5px] tracking-[0.22em] uppercase text-[#765928] hover:text-primary transition-colors pb-1 group font-medium cursor-pointer">
+        Private Salon Suite
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</button>
+</nav>
+</header>
+<main class="moh-main w-full">
+<!-- 2. HIGH-FASHION CINEMATIC HERO -->
+<section class="relative w-full min-h-[92vh] flex items-end pb-20 lg:pb-28 px-6 sm:px-12 lg:px-20 bg-[#120e0d] overflow-hidden">
+<!-- Atmospheric Backdrop Image with Regal Vignette -->
+<div class="absolute inset-0 bg-cover bg-center md:bg-[center_30%] opacity-90 scale-[1.01] transition-transform duration-1000 ease-out" style="background-image: url('assets/images/hero_main_2k.jpg');">
+</div>
+<!-- Multi-tier Museum Vignette & Gradient Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#120e0d] via-[#120e0d]/45 to-[#120e0d]/15"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-[#120e0d]/85 via-[#120e0d]/35 to-transparent"></div>
+<div class="absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.55)]"></div>
+<!-- Hero Typography & Monogram Accent -->
+<div class="relative z-10 w-full max-w-5xl">
+<!-- Subtitle Badge -->
+<div class="inline-flex items-center gap-3 px-4 py-1.5 border border-[#ffd799]/30 bg-black/40 backdrop-blur-md mb-6">
+<span class="text-[#ffd799] text-xs">✦</span>
+<span class="text-[11px] tracking-[0.34em] uppercase text-[#fbf9f6] font-light">AUTUMN / FESTIVE 2025 · MAISON CAPSULE</span>
+</div>
+<!-- Grand Editorial Headline -->
+<h1 class="font-editorial text-[42px] sm:text-[62px] lg:text-[76px] text-white tracking-[-0.01em] font-normal leading-[1.08] mb-6">
+          The Poetry of <br/>
+<span class="italic font-normal text-[#ffd799] font-editorial pr-2">Gujarati Handcraft</span>
+</h1>
+<!-- Heritage Narrative Subtitle -->
+<p class="font-sans text-[16px] sm:text-[18px] text-[#fbf9f6]/90 max-w-2xl font-light leading-[1.7] mb-10 tracking-[0.015em]">
+          Bespoke heirloom trousseaus and celebratory drapes, meticulously commissioned for over 10,500 discerning patrons worldwide by Gujarat’s multi-generational master karigars at Sindhu Bhavan Road.
+        </p>
+<!-- Understated Luxury CTAs -->
+<div class="flex flex-wrap items-center gap-5">
+<a class="h-13 px-9 bg-[#1f1b19] border border-[#ffd799]/70 text-[#ffdeac] text-[11px] tracking-[0.28em] uppercase font-medium flex items-center justify-center hover:bg-black hover:border-white hover:text-white transition-all duration-300 shadow-2xl" href="collections.html">
+            Explore Anthology
+          </a>
+<a class="h-13 px-9 border border-white/40 backdrop-blur-md text-white text-[11px] tracking-[0.28em] uppercase font-light flex items-center justify-center hover:border-[#ffd799] hover:text-[#ffd799] transition-all duration-300" href="product.html">
+            Reserve Atelier Salon
+          </a>
+</div>
+<!-- Architectural Telemetry Bar -->
+<div class="mt-14 pt-8 border-t border-white/15 flex flex-wrap items-center gap-8 lg:gap-14 text-white/75 text-[10px] tracking-[0.24em] uppercase font-light">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[15px] text-[#e7c185]">apartment</span>
+<span>Flagship: Sindhubhavan Rd, Bodakdev</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[15px] text-[#e7c185]">spa</span>
+<span>Pure Mulberry &amp; Hand-Spun Tissue</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[15px] text-[#e7c185]">verified</span>
+<span>By Private Salon Reservation Only</span>
+</div>
+</div>
+</div>
+</section>
+<!-- HAUTE COUTURE MARQUEE BANNER -->
+<div class="w-full bg-[#181413] border-y border-[#765928]/30 py-3.5 overflow-hidden select-none">
+<div class="flex whitespace-nowrap gap-14 text-[10px] tracking-[0.36em] uppercase text-[#e7c185]/80 font-light items-center">
+<span>ZARDOZI MARODI MASTERCRAFT</span>
+<span class="text-[#765928]">✦</span>
+<span>SINDHUBHAVAN ROAD SANCTUM</span>
+<span class="text-[#765928]">✦</span>
+<span>100% PURE CHANDERI &amp; ORGANZA</span>
+<span class="text-[#765928]">✦</span>
+<span>PATAN VEGETABLE DYE TEXTILES</span>
+<span class="text-[#765928]">✦</span>
+<span>HEIRLOOM BRIDAL TROUSSEAU</span>
+<span class="text-[#765928]">✦</span>
+<span>UNHURRIED ATELIER TAILORING</span>
+<span class="text-[#765928]">✦</span>
+<span>GLOBAL CLIENT SALON CONCIERGE</span>
+<span class="text-[#765928]">✦</span>
+</div>
+</div>
+<!-- 3. CURATED SERIES / MONOGRAPH VOLUMES -->
+<section class="w-full px-6 sm:px-12 lg:px-20 py-24 lg:py-32 bg-surface" id="curated-series">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#e7c185]/30">
+<div>
+<span class="text-[11px] tracking-[0.32em] uppercase text-[#765928] font-medium block mb-2">Curated Editorial Releases</span>
+<h2 class="font-editorial text-[36px] sm:text-[46px] text-primary tracking-tight font-normal leading-tight">
+              The Seasonal Monographs
+            </h2>
+</div>
+<p class="font-editorial italic text-on-surface-variant text-[17px] sm:text-[19px] max-w-md mt-4 md:mt-0 font-normal">
+            Three distinct sartorial declarations engineered for poise, weightless drapes, and ceremonial presence.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+<!-- Volume 01 -->
+<article class="group relative bg-[#f5f3f0] flex flex-col justify-between border border-[#e7c185]/35 hover:border-[#765928] transition-all duration-500 shadow-sm hover:shadow-xl">
+<!-- Monograph Framing & Badge -->
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Editorial portrait of model in earthy deep espresso raw silk layered kaftan tunic with refined desert clay marodi embroidery accents" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_LDBdI8SfKMkuHceuOjhzR3Sf0UGyKf9hWD0z8m3x7S24hJQ47k84vLErP5Kpz6yAkLUdbzqyoHXgPGDvamGZVzAO2qzO7JeQnU3HjQrY9W3XYpikTjSsIkvug2jD3vjUI2YUiltc4uay7Q4ydLjSEwCQywuMjQ0wrMeLSAh8ureIN8o_8UvoksJk_BT3RpYCqncog7tQRw8KFopw6NsPoVCsy28aLUwPGv0GVXGpt0CZlLCu9s9')"></div>
+<div class="absolute top-4 left-4 bg-[#1f1b19] text-[#ffd799] px-3.5 py-1 text-[10px] tracking-[0.28em] uppercase font-light">
+                Volume 01
+              </div>
+<div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 text-[10px] tracking-[0.22em] uppercase text-primary border border-[#e7c185]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                14 Bespoke Ensembles
+              </div>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow">
+<div>
+<span class="text-[10px] tracking-[0.24em] uppercase text-[#765928] font-medium block mb-1">Earth &amp; Clay Palette</span>
+<h3 class="font-editorial text-[28px] text-primary tracking-tight font-normal mb-3">Earthy Opulence</h3>
+<p class="font-sans text-[14px] leading-relaxed text-on-surface-variant font-light mb-6">
+                  Raw silk tunics, hand-sculpted palazzo contours, and fluid drapes saturated in roasted cocoa, Patan clay, and aged clove.
+                </p>
+</div>
+<div class="pt-5 border-t border-[#e7c185]/30 flex items-center justify-between">
+<span class="text-[10px] tracking-[0.2em] uppercase text-outline">Handloom Mulberry</span>
+<a class="text-[11px] tracking-[0.24em] uppercase text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors font-medium" href="collections.html">
+<span>Discover Volume</span>
+<span class="material-symbols-outlined text-[15px] transition-transform group-hover:translate-x-1">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Volume 02 -->
+<article class="group relative bg-[#f5f3f0] flex flex-col justify-between border border-[#e7c185]/35 hover:border-[#765928] transition-all duration-500 shadow-sm hover:shadow-xl">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Festive saffron gold handcrafted bridal lehenga with heavy antique zardozi work and fine dabka needlecraft" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMFi3ldEp8KREdHXqbNlrO7XjrRbLY6-w0WIzAMF86toIxocJIrK1r27bOMyNGA-MgcbWwl92zu46qK-XQHwYxBlv4RU8lSB3it96nWc82D2Ehs0PiYm2FtVAgOoKe3k1Td_ZqVvvc8hjLep9oXbd8gg0sLzVk_9mO7AK5kDFCdR7VSpaEVLJ4-QQWreGOOsERMg4EZ8WBVmp6jIC9kJqWS003oWUCwWwN_zGB0MQ7NEVcA8nnmWZn')"></div>
+<div class="absolute top-4 left-4 bg-[#765928] text-white px-3.5 py-1 text-[10px] tracking-[0.28em] uppercase font-light">
+                Volume 02
+              </div>
+<div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 text-[10px] tracking-[0.22em] uppercase text-primary border border-[#e7c185]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Heirloom Bridal
+              </div>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow">
+<div>
+<span class="text-[10px] tracking-[0.24em] uppercase text-[#765928] font-medium block mb-1">Antique Gold Dabka</span>
+<h3 class="font-editorial text-[28px] text-primary tracking-tight font-normal mb-3">Trousseau Must-Haves</h3>
+<p class="font-sans text-[14px] leading-relaxed text-on-surface-variant font-light mb-6">
+                  Deep saffron zardozi ensembles, marodi needlecraft cholis, and gossamer tissue veils designed for multigenerational preservation.
+                </p>
+</div>
+<div class="pt-5 border-t border-[#e7c185]/30 flex items-center justify-between">
+<span class="text-[10px] tracking-[0.2em] uppercase text-outline">Gold Filigree Thread</span>
+<a class="text-[11px] tracking-[0.24em] uppercase text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors font-medium" href="collections.html">
+<span>Discover Volume</span>
+<span class="material-symbols-outlined text-[15px] transition-transform group-hover:translate-x-1">north_east</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Volume 03 -->
+<article class="group relative bg-[#f5f3f0] flex flex-col justify-between border border-[#e7c185]/35 hover:border-[#765928] transition-all duration-500 shadow-sm hover:shadow-xl">
+<div class="relative w-full aspect-[4/5] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Editorial model wearing fluid champagne gold asymmetrical evening drape with fine cutwork lace" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbenvNzt_sUytIwX6-LVU7-5tGYE2jyMl_GPRqOK1Fs86IC63ttCFyqx47zolL9kfx9931TC0YOrB7huygxSpn7ER-PT7qPp0FdMkpysQ_XeH4YU9DjJPX9XGHFyQz209RAemCFftWLKPZ8pb6pD-SmbycdcPWDmXpE8-hlQ81uBQVjLlSwB-k3tJWjh7ORuUepM-igsO8qx7CbXLhh36LVwwR9Ct2CJ1fNDxJ0hP0vjmUg4iIKQce')"></div>
+<div class="absolute top-4 left-4 bg-[#1f1b19] text-[#ffd799] px-3.5 py-1 text-[10px] tracking-[0.28em] uppercase font-light">
+                Volume 03
+              </div>
+<div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 text-[10px] tracking-[0.22em] uppercase text-primary border border-[#e7c185]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                9 Cocktail Silhouettes
+              </div>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow">
+<div>
+<span class="text-[10px] tracking-[0.24em] uppercase text-[#765928] font-medium block mb-1">Sculptural Sheer</span>
+<h3 class="font-editorial text-[28px] text-primary tracking-tight font-normal mb-3">Gilded Grace</h3>
+<p class="font-sans text-[14px] leading-relaxed text-on-surface-variant font-light mb-6">
+                  Weightless evening capes, hand-crimped metallic organza, and architectural dupattas engineered for twilight ceremonies.
+                </p>
+</div>
+<div class="pt-5 border-t border-[#e7c185]/30 flex items-center justify-between">
+<span class="text-[10px] tracking-[0.2em] uppercase text-outline">Spun Metallic Weave</span>
+<a class="text-[11px] tracking-[0.24em] uppercase text-primary group-hover:text-secondary flex items-center gap-1.5 transition-colors font-medium" href="collections.html">
+<span>Discover Volume</span>
+<span class="material-symbols-outlined text-[15px] transition-transform group-hover:translate-x-1">north_east</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- 4. ARTISANAL PROVENANCE & MUSEUM LEDGER -->
+<section class="w-full bg-[#f4efe8] py-24 lg:py-32 px-6 sm:px-12 lg:px-20 border-y border-[#e7c185]/40" id="provenance">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Narrative & Ledger Bento -->
+<div class="lg:col-span-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-[#765928] text-xs">✦</span>
+<span class="text-[11px] tracking-[0.32em] uppercase text-[#765928] font-medium">Museum Artisanal Ledger</span>
+</div>
+<h2 class="font-editorial text-[36px] sm:text-[44px] text-primary tracking-tight font-normal leading-[1.18] mb-6">
+              A responsible oath rooted in sacred needlework &amp; generational dignity.
+            </h2>
+<p class="font-sans text-[15px] sm:text-[16px] text-on-surface-variant font-light leading-[1.8] mb-10">
+              At MOH, every ensemble honors an unhurried cadence. We renounce industrial seasonal overproduction in reverence to Gujarat’s living crafts. Each dabka knot and cut-glass motif is manifested by our esteemed artisan guilds under dignified, equitable patronage.
+            </p>
+<!-- Refined Metrics Grid -->
+<div class="grid grid-cols-2 gap-6 pt-2">
+<div class="p-6 bg-white border border-[#e7c185]/40 shadow-sm">
+<span class="font-editorial text-[38px] text-[#765928] block leading-none mb-2 font-normal">480+</span>
+<span class="text-[10px] tracking-[0.22em] uppercase text-primary font-medium block">Karigar Handcraft Hours</span>
+<p class="text-[12px] text-outline font-light mt-1">Direct single-needle zardozi per trousseau</p>
+</div>
+<div class="p-6 bg-white border border-[#e7c185]/40 shadow-sm">
+<span class="font-editorial text-[38px] text-[#765928] block leading-none mb-2 font-normal">100%</span>
+<span class="text-[10px] tracking-[0.22em] uppercase text-primary font-medium block">Mulberry &amp; Chanderi</span>
+<p class="text-[12px] text-outline font-light mt-1">Certified handloom natural weaves</p>
+</div>
+<div class="p-6 bg-white border border-[#e7c185]/40 shadow-sm">
+<span class="font-editorial text-[38px] text-[#765928] block leading-none mb-2 font-normal">Zero</span>
+<span class="text-[10px] tracking-[0.22em] uppercase text-primary font-medium block">Waste Archiving</span>
+<p class="text-[12px] text-outline font-light mt-1">Tailored strictly to bridal commission</p>
+</div>
+<div class="p-6 bg-white border border-[#e7c185]/40 shadow-sm">
+<span class="font-editorial text-[38px] text-[#765928] block leading-none mb-2 font-normal">28</span>
+<span class="text-[10px] tracking-[0.22em] uppercase text-primary font-medium block">Artisan Guild Families</span>
+<p class="text-[12px] text-outline font-light mt-1">Generational custodians across Gujarat</p>
+</div>
+</div>
+</div>
+<!-- Studio Imagery & Creative Director Inset -->
+<div class="lg:col-span-6">
+<div class="relative">
+<!-- Master Adda Image -->
+<div class="w-full aspect-[4/3] bg-surface-container overflow-hidden border border-[#e7c185]/50 shadow-2xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="Macro photograph of Indian master artisan karigar hands meticulously working real antique gold thread and pearls" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpJHG4HoeU9dGit-Ips1aQDxcnDMQzcafDnUwFRjmH6EcJqiXID6oBoAim8KxuUIWnqX6V3kqg9YB2ukPgGkZ0sMogCpP9h51QzR5xVBOn8BQiUm691ChXYoDfRPzQwaDKzQs1XvGy1Jb0yq_wyKiY59EN4c4WSFjEjIvtUwGN5Z-oJ3XzoOp1uUKdHKs2OKzROJS5ZkQReLjpEW7vFTKEZwT8DVwrTKyYYa1VMAerVZfeoW6lZUML')">
+</div>
+</div>
+<!-- Overlapping Monogram Studio Plaque -->
+<div class="lg:absolute -bottom-8 -left-8 bg-[#1f1b19] text-white p-7 max-w-sm border border-[#ffd799]/40 shadow-2xl mt-6 lg:mt-0">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-editorial text-[18px] text-[#ffd799] italic">The Bodakdev Adda</span>
+</div>
+<p class="font-editorial italic text-[14px] text-[#fbf9f6]/90 leading-relaxed font-light mb-4">
+                  “Couture is an intimate rhythm—measured in the whisper of gold needles piercing silken tension.”
+                </p>
+<div class="pt-3 border-t border-white/20 flex items-center justify-between text-[10px] tracking-[0.24em] uppercase text-[#e7c185]">
+<span>Mita Manglani · Founder</span>
+<span class="text-white/40">Ahmedabad</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. THE BODAKDEV ATELIER RACK (CURATED PIECES) -->
+<section class="w-full px-6 sm:px-12 lg:px-20 py-24 lg:py-32 bg-surface" id="atelier-rack">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#e7c185]/30">
+<div>
+<span class="text-[11px] tracking-[0.32em] uppercase text-[#765928] font-medium block mb-2">Fresh Off The Loom</span>
+<h2 class="font-editorial text-[36px] sm:text-[46px] text-primary tracking-tight font-normal leading-tight">
+              The Bodakdev Atelier Rack
+            </h2>
+</div>
+<!-- Category Filters -->
+<div class="flex items-center gap-2 mt-6 md:mt-0">
+<button class="px-4 py-1.5 bg-[#1f1b19] text-[#ffd799] text-[10px] tracking-[0.24em] uppercase font-medium border border-[#1f1b19]">Anthology (24)</button>
+<button class="px-4 py-1.5 bg-white hover:bg-surface-container text-on-surface-variant text-[10px] tracking-[0.24em] uppercase border border-[#e7c185]/40 transition-colors">Bridal Lehengas</button>
+<button class="px-4 py-1.5 bg-white hover:bg-surface-container text-on-surface-variant text-[10px] tracking-[0.24em] uppercase border border-[#e7c185]/40 transition-colors">Draped Capes</button>
+</div>
+</div>
+<!-- 4-Column Luxury Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product 01 -->
+<div class="group flex flex-col bg-white border border-[#e7c185]/30 hover:border-[#765928] transition-all duration-300 relative">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Emerald raw silk short kurti with heavy gota patti and zardozi yoke paired with crinkled sharara pants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwfwLiFjEosq3vRXJZ2XAXF5kg_Zxd4Ez3KRzu0E4WY9rn3KHspI451Z592iI1PF1GL0hwRLTUwLh-VhvGmiJxMPwRp-OafrMEW7Z3uXTutngyD9RpS-_Ixyr5S_4JSyQaXqkB8oMBPfjP3iDXj-u8C724tpFE49_u-tyrXV386hXAi5hX5mZSCt4rxSfdqMbyPCndQFWUAlzJKHEyk14Noy-fgqe8117H9pPgftQ3qCKzaZ7vGRj6')"></div>
+<div class="absolute top-3 left-3 bg-[#1f1b19]/90 text-[#ffd799] px-2.5 py-1 text-[9px] tracking-[0.22em] uppercase font-light">
+  Pure Zardozi Marodi
+</div>
+<button onclick="toggleWishlistPiece('aurelia-sharara', event)" class="wishlist-heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary hover:text-secondary shadow-md transition-all cursor-pointer z-10" data-product-id="aurelia-sharara" title="Save Piece">
+  <span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<a class="absolute bottom-0 inset-x-0 bg-[#120e0d] text-[#ffdeac] py-3 text-[10px] tracking-[0.26em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center gap-2 border-t border-[#ffd799]/30" href="product.html?id=aurelia-sharara">
+<span>Inquire Bespoke Fit</span>
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</a>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<span class="text-[9px] tracking-[0.26em] uppercase text-[#765928] font-medium block mb-1">Bodakdev Exclusive</span>
+<a href="product.html?id=aurelia-sharara" class="hover:text-secondary transition-colors"><h4 class="font-editorial text-[20px] text-primary mb-1 font-normal">Aurelia Silk Sharara Set</h4></a>
+<p class="text-[12px] text-outline font-light">Forest Green Mulberry Silk &amp; Dabka</p>
+</div>
+<div class="mt-5 pt-3 border-t border-[#e7c185]/20 flex items-center justify-between">
+<span class="font-editorial text-[18px] text-primary font-normal"><span data-inr-price="78500">₹78,500</span></span>
+<span class="text-[9px] tracking-[0.22em] uppercase text-[#765928] font-medium">Made-To-Order</span>
+</div>
+</div>
+</div>
+<!-- Product 02 -->
+<div class="group flex flex-col bg-white border border-[#e7c185]/30 hover:border-[#765928] transition-all duration-300 relative">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Deep plum raw silk tunic with sheer tissue gold dupatta and delicate dabka neckline details" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzu-u6wZ3VfRoSsdnjYa2YstIzKdQSt-ufOoU9VQrggdYbhvkivCdOCvKWUj8Y9spH9KQir_P8KKB-gt64T_n3WspBP_lYXkqvdHhKE2zRi9hwD3QNrVMrm7Puz5WCOeNXtEOzyjGwegknAta4v6y7mfRQ4SXlWbVspvAIeb6Otg-o6OLBXoFsCP5y__vfvJiuxpq6I2d8RFuTNTYcKf_pxvHrKf8mbT_oFmgxJQlystXYLnYaDd_M')"></div>
+<div class="absolute top-3 left-3 bg-[#765928]/95 text-white px-2.5 py-1 text-[9px] tracking-[0.22em] uppercase font-light">
+  Hand-Spun Tissue
+</div>
+<button onclick="toggleWishlistPiece('noor-kaftan', event)" class="wishlist-heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary hover:text-secondary shadow-md transition-all cursor-pointer z-10" data-product-id="noor-kaftan" title="Save Piece">
+  <span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<a class="absolute bottom-0 inset-x-0 bg-[#120e0d] text-[#ffdeac] py-3 text-[10px] tracking-[0.26em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center gap-2 border-t border-[#ffd799]/30" href="product.html?id=noor-kaftan">
+<span>Inquire Bespoke Fit</span>
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</a>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<span class="text-[9px] tracking-[0.26em] uppercase text-[#765928] font-medium block mb-1">Festive Capsule</span>
+<a href="product.html?id=noor-kaftan" class="hover:text-secondary transition-colors"><h4 class="font-editorial text-[20px] text-primary mb-1 font-normal">Noor Draped Kaftan Gown</h4></a>
+<p class="text-[12px] text-outline font-light">Deep Plum Organza with Antique Gold Dabka</p>
+</div>
+<div class="mt-5 pt-3 border-t border-[#e7c185]/20 flex items-center justify-between">
+<span class="font-editorial text-[18px] text-primary font-normal"><span data-inr-price="62000">₹62,000</span></span>
+<span class="text-[9px] tracking-[0.22em] uppercase text-[#765928] font-medium">Made-To-Order</span>
+</div>
+</div>
+</div>
+<!-- Product 03 -->
+<div class="group flex flex-col bg-white border border-[#e7c185]/30 hover:border-[#765928] transition-all duration-300 relative">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Ivory and pale champagne gold lehenga with real hand-cut sitara sequin work and gossamer veil" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDK1KAvOvC9XzuujWDvNRN0xwgX7MCxw_2QyLK7qVD7CkA807UxbAb5mPajCj4LNeWRxXviO3fQ1IHs7ZVgce-Zw7J2eUL0c07jq8G-72_8artHc1ncYnXqQEjOLF0oCQHs4D2O7SxQz0pAGxDNGkagS_q0JvfvjWAi2onLnbMg40b8lvlu4CG9GTy_66jlbt4eJhoSknGHdhD5tKqP7E117mTFfj4wgmn9c68Kmk-zmLuyCT01l4zE')"></div>
+<div class="absolute top-3 left-3 bg-[#1f1b19]/90 text-[#ffd799] px-2.5 py-1 text-[9px] tracking-[0.22em] uppercase font-light">
+  Heirloom Bridal
+</div>
+<button onclick="toggleWishlistPiece('chandani-lehenga', event)" class="wishlist-heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary hover:text-secondary shadow-md transition-all cursor-pointer z-10" data-product-id="chandani-lehenga" title="Save Piece">
+  <span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<a class="absolute bottom-0 inset-x-0 bg-[#120e0d] text-[#ffdeac] py-3 text-[10px] tracking-[0.26em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center gap-2 border-t border-[#ffd799]/30" href="product.html?id=chandani-lehenga">
+<span>Inquire Bespoke Fit</span>
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</a>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<span class="text-[9px] tracking-[0.26em] uppercase text-[#765928] font-medium block mb-1">Bridal Suite</span>
+<a href="product.html?id=chandani-lehenga" class="hover:text-secondary transition-colors"><h4 class="font-editorial text-[20px] text-primary mb-1 font-normal">Chandani Zardozi Lehenga</h4></a>
+<p class="text-[12px] text-outline font-light">Ivory Hand-Spun Silk &amp; Real Pearls</p>
+</div>
+<div class="mt-5 pt-3 border-t border-[#e7c185]/20 flex items-center justify-between">
+<span class="font-editorial text-[18px] text-primary font-normal"><span data-inr-price="185000">₹1,85,000</span></span>
+<span class="text-[9px] tracking-[0.22em] uppercase text-[#765928] font-medium">Consultation Only</span>
+</div>
+</div>
+</div>
+<!-- Product 04 -->
+<div class="group flex flex-col bg-white border border-[#e7c185]/30 hover:border-[#765928] transition-all duration-300 relative">
+<div class="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Ochre yellow one-shoulder draped georgette cape paired with embroidered cigarette pants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATASGudGaeFmdjk89fuU0Q4fY0nEjgkFB03N_Jt6kgeMMXdo_9rgA61fua7GpVH1WYP9wrGrwI62plBOhrlgSABOidei4W_fD4s25SpZguuUd2mDJZM92oJzKakzjAL0bG-H00jpcjna5_tH0R_uRgM03ypTov5uTySp1i7APLw9G4hEmO2cecQcBLCuYsmuGK1kHxutmY65DpyjlYrcV3CdU4g2UuKDvhw_U8Fu7R6yALFDHn3gJY')"></div>
+<div class="absolute top-3 left-3 bg-[#1f1b19]/90 text-[#ffd799] px-2.5 py-1 text-[9px] tracking-[0.22em] uppercase font-light">
+  Hand-Cut Mirror
+</div>
+<button onclick="toggleWishlistPiece('kesari-cape', event)" class="wishlist-heart-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-primary hover:text-secondary shadow-md transition-all cursor-pointer z-10" data-product-id="kesari-cape" title="Save Piece">
+  <span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<a class="absolute bottom-0 inset-x-0 bg-[#120e0d] text-[#ffdeac] py-3 text-[10px] tracking-[0.26em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center gap-2 border-t border-[#ffd799]/30" href="product.html?id=kesari-cape">
+<span>Inquire Bespoke Fit</span>
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</a>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between">
+<div>
+<span class="text-[9px] tracking-[0.26em] uppercase text-[#765928] font-medium block mb-1">Cocktail &amp; Sangeet</span>
+<a href="product.html?id=kesari-cape" class="hover:text-secondary transition-colors"><h4 class="font-editorial text-[20px] text-primary mb-1 font-normal">Kesari Asymmetric Cape</h4></a>
+<p class="text-[12px] text-outline font-light">Ochre Georgette with Sitara Needlework</p>
+</div>
+<div class="mt-5 pt-3 border-t border-[#e7c185]/20 flex items-center justify-between">
+<span class="font-editorial text-[18px] text-primary font-normal"><span data-inr-price="54000">₹54,000</span></span>
+<span class="text-[9px] tracking-[0.22em] uppercase text-[#765928] font-medium">Made-To-Order</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. THE SINDHUBHAVAN ROAD FLAGSHIP SANCTUM -->
+<section class="w-full bg-[#f4efe8] py-24 lg:py-32 px-6 sm:px-12 lg:px-20 border-t border-[#e7c185]/40" id="atelier-suite">
+<div class="max-w-7xl mx-auto bg-white p-8 sm:p-14 lg:p-20 border border-[#e7c185]/40 shadow-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Flagship Gallery Showcase -->
+<div class="lg:col-span-6 relative">
+<div class="aspect-[4/3] w-full bg-surface-container overflow-hidden border border-[#e7c185]/40 shadow-lg">
+<div class="w-full h-full bg-cover bg-center" data-alt="Interior architectural view of luxury MOH haute couture flagship showroom in Ahmedabad" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHOXOPU7xLwRyJvrXO7hngf4Ln9RIsZYOuhSyGWdRGVt7BYawyhDvwY7H8tZCqvms2OBnde-oonWu08t9j5IK3xLsn4ChP1lLs_sSsMzL2cMmgf6n9Jsx-WqSHfoDVyPHXfyqmBLM_Ho9DhsNI8UDD7AdZua5T1mQsvKk7rbXQyFUMcxwZgrblSJa-aWC13ES4-dRQ5feZVkpCHpAhNIK7njhS6BujMZum_MCO2tfcicrU1fcJ4LiW')"></div>
+</div>
+<div class="absolute -bottom-6 -right-6 hidden sm:block bg-[#1f1b19] text-[#ffd799] p-5 max-w-xs border border-[#ffd799]/40 shadow-xl">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[16px] text-[#ffd799]">verified</span>
+<span class="text-[9px] tracking-[0.26em] uppercase font-medium">Private Salon Suite</span>
+</div>
+<p class="text-[12px] text-white/80 font-light">
+                One-on-one trousseau consultation with Creative Director Mita Manglani.
+              </p>
+</div>
+</div>
+<!-- Suite Booking Details -->
+<div class="lg:col-span-6">
+<span class="text-[11px] tracking-[0.32em] uppercase text-[#765928] font-medium block mb-2">The Bodakdev Sanctum</span>
+<h2 class="font-editorial text-[36px] sm:text-[44px] text-primary tracking-tight font-normal leading-tight mb-5">
+              Experience The Ahmedabad Salon
+            </h2>
+<p class="font-sans text-[15px] text-on-surface-variant font-light leading-[1.8] mb-8">
+              Nestled quietly off Sindhubhavan Road in Bodakdev, our flagship boutique is orchestrated as an intimate sanctuary where patrons and brides encounter handwoven Gujarat textiles at a gentle, unhurried cadence.
+            </p>
+<div class="space-y-6 mb-10 pb-8 border-b border-[#e7c185]/30">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-[#765928] text-[20px] mt-0.5">location_on</span>
+<div>
+<h5 class="text-[11px] tracking-[0.24em] uppercase text-primary font-medium">Sanctum Address</h5>
+<p class="text-[13px] text-on-surface-variant font-light mt-0.5">Behind B.K. Party Plot, Off Sindhubhavan Road, Bodakdev, Ahmedabad 380054</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-[#765928] text-[20px] mt-0.5">nest_clock_farsight_analog</span>
+<div>
+<h5 class="text-[11px] tracking-[0.24em] uppercase text-primary font-medium">Visiting Protocol</h5>
+<p class="text-[13px] text-on-surface-variant font-light mt-0.5">Monday through Saturday: 11:00 AM – 7:30 PM (Prior Salon Appointment Advised)</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-[#765928] text-[20px] mt-0.5">public</span>
+<div>
+<h5 class="text-[11px] tracking-[0.24em] uppercase text-primary font-medium">Global Bridal Concierge</h5>
+<p class="text-[13px] text-on-surface-variant font-light mt-0.5">Dedicated virtual salon previews for patrons across North America, UK, and UAE</p>
+</div>
+</div>
+</div>
+<!-- Booking Buttons -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<a class="h-12 px-7 bg-[#1f1b19] text-[#ffd799] text-[10px] tracking-[0.26em] uppercase font-medium flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all duration-300 border border-[#765928]/40 shadow-sm" href="https://wa.me/919925000297" target="_blank">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+<span>Reserve via WhatsApp</span>
+</a>
+<a class="h-12 px-7 bg-white text-primary text-[10px] tracking-[0.26em] uppercase font-light flex items-center justify-center hover:bg-[#f5f3f0] border border-[#e7c185]/40 transition-colors" href="#patron-inquiry">
+                Request Fitting Date
+              </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. PRIVATE CLIENT INVITATION BANNER -->
+<section class="w-full bg-[#181413] text-white py-20 px-6 sm:px-12 lg:px-20 border-b border-[#765928]/30" id="patron-inquiry">
+<div class="max-w-3xl mx-auto text-center flex flex-col items-center">
+<span class="text-[#ffd799] text-2xl mb-3">✦</span>
+<h3 class="font-editorial text-[30px] sm:text-[38px] text-white tracking-tight font-normal mb-3">
+          Bespoke Consultations for 2025–26 Weddings
+        </h3>
+<p class="font-sans text-[14px] sm:text-[15px] text-[#fbf9f6]/75 max-w-xl font-light mb-8 leading-relaxed">
+          Bridal commissions are strictly regulated per lunar quarter to ensure uncompromised master karigar devotion to every fold and thread.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md">
+<input class="w-full sm:flex-1 h-12 bg-white/5 border border-[#ffd799]/30 px-5 text-[11px] tracking-[0.2em] uppercase text-white placeholder:text-white/40 focus:outline-none focus:border-[#ffd799]" placeholder="ENTER WHATSAPP OR MOBILE" type="tel"/>
+<button onclick="alert('Thank you. A senior couture advisor from MOH Atelier Ahmedabad will connect with your private appointment details via WhatsApp.');" class="w-full sm:w-auto h-12 px-8 bg-[#ffd799] text-[#1f1b19] text-[10px] tracking-[0.28em] uppercase font-semibold hover:bg-white hover:text-black transition-colors cursor-pointer">
+            Connect
+          </button>
+</div>
+</div>
+</section>
+
+<!-- 7.5 ATELIER DIARY / INSTAGRAM CURATION -->
+<section class="w-full bg-[#14100e] text-[#fbf9f6] py-20 px-6 sm:px-12 lg:px-20 border-b border-[#765928]/30">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-[#ffd799] font-medium mb-3">
+          <span>LIVE FROM BODAKDEV &amp; SINDHU BHAVAN ROAD</span>
+          <span class="text-[#765928]">✦</span>
+          <span>CURATED BY MITA MANGLANI</span>
+        </div>
+        <h3 class="font-editorial text-[32px] sm:text-[44px] text-white tracking-tight font-normal leading-tight">
+          The Atelier Diary <span class="italic text-[#ffd799]">on Instagram</span>
+        </h3>
+      </div>
+      <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3 border border-[#ffd799]/40 hover:border-white text-[#ffdeac] hover:text-white text-[11px] tracking-[0.24em] uppercase transition-all duration-300 self-start md:self-auto bg-black/30 group">
+        <svg class="w-4 h-4 fill-current text-[#ffd799] group-hover:text-white transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <span>Follow @mohstudioahmedabad</span>
+      </a>
+    </div>
+
+    <!-- 5-Column High Fashion Instagram Strip -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
+      <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="group relative aspect-[3/4] overflow-hidden bg-black/40 border border-[#765928]/30">
+        <img class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqYx4SDYeiPd1mblO6w1smHfupr4H9dP8d7A49S4KRt1kxw44QFF6ULiwg7jAgT926ltu2L7y8XsnJOZhAEujhLoac-yYDLArgst1DCu9jtbbcCAE-NaYLoMEbo6p5ru2LALBrmZyDZXjz451CdW_Al-Q5zfVlalNqGkZbXQuidLnG27bu8DCzMzzsfR1YZ6NXDhVhDYjpLvknx95v6gy9PWys_ybDvaXRDT2v0HI7Vr6HcdF4D41Q" alt="MOH Studio Instagram" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <span class="text-[9px] uppercase tracking-widest text-[#ffd799]">Bodakdev Flagship</span>
+          <p class="text-[11px] text-white/90 line-clamp-2 mt-1">Gilded ochre lehenga commission in progress.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="group relative aspect-[3/4] overflow-hidden bg-black/40 border border-[#765928]/30">
+        <img class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb7DbyKAhUiqlQzYtUTOil5MEjWocMoCR7x2Zeo3Z8OC0VZYEp2M3Q6w2Fc4DZgzellqRrdPTxpOJhb_N0bK0QbPdFU9xzcqWLgW0t2gerSzRrUKP96MU04wkYCsUHP1MOU5QShT9dEFkAlKat0gy8VUczq2djACdJD5JdeglI6dozVows-Z6BHye4rkTkpaE5xsFG2nrR-I4QwkBmETO-wFPBdP7xmPKeJpsi5EXbYB0Sx8tQdk2s" alt="MOH Studio Instagram" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <span class="text-[9px] uppercase tracking-widest text-[#ffd799]">Heirloom Zardozi</span>
+          <p class="text-[11px] text-white/90 line-clamp-2 mt-1">Saffron silk hand-embroidered dabka needlecraft.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="group relative aspect-[3/4] overflow-hidden bg-black/40 border border-[#765928]/30">
+        <img class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO79_YLeYnz9v5gf0XT1hBAWn3Q1W3xUZjESB89mK9CmgB75uXjWZem-gx2mPfcezDFoYqQjR1i_73dLGeIpSExhdtkOBW8YW_BLY5CBTPvtnNo9vRztQOnDp9_rc_nUvWBFuMJpM5ZOkljq-F1dN8aal5s2n57oZjrWxMGyGWwBEXF3Jn8kL85jGPszKIPkk85wI_OFFsP4Vb-W-QkRRroIHegqRYC-NzC_d3aVwKGy40kk0A3zWT" alt="MOH Studio Instagram" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <span class="text-[9px] uppercase tracking-widest text-[#ffd799]">Trousseau Edit</span>
+          <p class="text-[11px] text-white/90 line-clamp-2 mt-1">24 hand-cut kalis in ivory Chanderi weave.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="group relative aspect-[3/4] overflow-hidden bg-black/40 border border-[#765928]/30">
+        <img class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdZ4gY5cRPoyGFL4rFL0JPgYvtmayYu2Gd7h465rN5JXEcN_UX2bI3N1yFCu2GTCh5yROkKWU70vsFILXz7479RXCmRlto9jLKHjYz_HjpirmvyO-hqmaT2-Gbt7qzzgDAFK7Qn2FYgOrV37R-qd6JKbwF1e65sqpcAK7EPLARdIUDt5bKVfdeZr0CCxWERmty4XVpH0cvIIgiDtqcrh53inC5npA4x7oHFM95M-bZgzqTBE1-0t4J" alt="MOH Studio Instagram" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <span class="text-[9px] uppercase tracking-widest text-[#ffd799]">Studio Edition</span>
+          <p class="text-[11px] text-white/90 line-clamp-2 mt-1">Midnight velvet bugle bead cape ensemble.</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="group relative aspect-[3/4] overflow-hidden bg-black/40 border border-[#765928]/30 col-span-2 md:col-span-1">
+        <img class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCVjoeMlvZbqtdpE1HKWEJ3CGbGyTKEkYiVWKgFv-YxA9rLhTfG0izmzPi-UgXgal334K7GuETGzYyI4u2H6rH-obzA6Tx7xg3RzJwTSXgGIsxhAnRt9vMLCK-eug7MyuGwFrEBfkHibqAA50bvDvtV9F2_fJVk3Lyl7kRF_tW9RKrYuKRe86osb8OXIetNNlBOsDnvbdpSaIe_y-cRmwPbv7AslfiWfq-DJ2_pLNgM1lRId40aJdn" alt="MOH Studio Instagram" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+          <span class="text-[9px] uppercase tracking-widest text-[#ffd799]">Festive Pret</span>
+          <p class="text-[11px] text-white/90 line-clamp-2 mt-1">Earthy russet raw silk kurta with copper gota.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<!-- 8. STATELY LUXURY MAISON FOOTER -->
+<footer class="w-full bg-[#120e0d] text-[#fbf9f6] pt-24 pb-14 border-t border-[#765928]/30">
+<div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14 mb-20">
+<!-- Brand Narrative & Seal -->
+<div class="lg:col-span-4 pr-0 lg:pr-6">
+<span class="block font-editorial text-[32px] tracking-[0.34em] text-[#ffd799] font-normal leading-none mb-2">M · O · H</span>
+<p class="font-editorial italic text-[#e7c185] text-[15px] mb-4">Curated by Mita Manglani · Ahmedabad</p>
+<p class="font-sans text-[13px] text-[#fbf9f6]/70 leading-relaxed font-light mb-6">
+            An esteemed sanctum of deliberate handcrafted couture, bespoke bridal heirlooms, and rare needlework preserving Gujarat’s royal textile lineages.
+          </p>
+<div class="inline-flex items-center gap-2 text-[10px] tracking-[0.24em] uppercase text-[#ffd799] border border-[#ffd799]/30 px-3 py-1.5 bg-black/40">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span>Heritage Artisanal Guild Member</span>
+</div>
+</div>
+<!-- Flagship Address & Timings -->
+<div class="lg:col-span-3">
+<h4 class="text-[11px] tracking-[0.28em] uppercase text-[#ffd799] mb-5 font-medium">Ahmedabad Flagship Atelier</h4>
+<p class="text-[13px] text-[#fbf9f6]/70 leading-relaxed font-light mb-3">
+            Behind R.K. Party Plot, PRL Colony,<br/>
+            Off Sindhu Bhavan Road, Ambli,<br/>
+            Ahmedabad, Gujarat 380058, India
+          </p>
+<p class="text-[13px] text-[#fbf9f6]/70 font-light mb-3">
+            Hours: Monday – Saturday<br/>
+            11:00 AM – 7:30 PM IST (Private Salon)
+          </p>
+<p class="text-[12px] text-[#ffd799] font-medium tracking-wide">
+            Concierge: <a href="tel:+919925000297" class="hover:text-white transition-colors">+91 99250 00297</a>
+          </p>
+</div>
+<!-- Bespoke Services -->
+<div class="lg:col-span-2">
+<h4 class="text-[11px] tracking-[0.28em] uppercase text-[#ffd799] mb-5 font-medium">Salon Services</h4>
+<ul class="space-y-3 text-[13px] text-[#fbf9f6]/70 font-light">
+<li><a class="hover:text-white transition-colors" href="collections.html">Bridal Trousseau</a></li>
+<li><a class="hover:text-white transition-colors" href="product.html">Global Virtual Styling</a></li>
+<li><a class="hover:text-white transition-colors" href="atelier.html">Heirloom Preservation</a></li>
+<li><a class="hover:text-white transition-colors" href="atelier.html">Custom Marodi Weaves</a></li>
+<li><a class="hover:text-white transition-colors" href="product.html">Private Client Suite</a></li>
+</ul>
+</div>
+<!-- Private Newsletter & Atelier Diary -->
+<div class="lg:col-span-3">
+<h4 class="text-[11px] tracking-[0.28em] uppercase text-[#ffd799] mb-5 font-medium">Seasonal Private Previews</h4>
+<p class="text-[13px] text-[#fbf9f6]/70 font-light leading-relaxed mb-4">
+            Receive private monograph lookbooks, trunk invitations, and unreleased bridal anthology drops.
+          </p>
+<div class="flex items-center border-b border-[#e7c185]/40 py-2">
+<input class="bg-transparent text-[11px] tracking-[0.2em] uppercase text-white placeholder:text-white/40 focus:outline-none flex-1" placeholder="PATRON EMAIL ADDRESS" type="email"/>
+<button class="text-[10px] tracking-[0.26em] uppercase text-[#ffd799] hover:text-white transition-colors font-medium">REQUEST</button>
+</div>
+<div class="mt-6 flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-white/50">
+<span>Atelier Diary:</span>
+<a class="text-[#ffd799] hover:text-white transition-colors font-medium underline underline-offset-4" href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer">@mohstudioahmedabad</a>
+</div>
+</div>
+</div>
+<!-- Copyright & Legal -->
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-white/40 font-light">
+<p>© 2025 MOH ATELIER AHMEDABAD BY MITA MANGLANI. ALL RIGHTS RESERVED.</p>
+<div class="flex items-center gap-8">
+<a class="hover:text-white transition-colors" href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer">Instagram</a>
+<a class="hover:text-white transition-colors" href="atelier.html">Artisan Guilds</a>
+<a class="hover:text-white transition-colors" href="collections.html">Anthology</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- ========================================== -->
+<!-- MOH ATELIER - GLOBAL INTERACTIVE OVERLAYS -->
+<!-- ========================================== -->
+
+<!-- 1. CONCIERGE LIVE SEARCH MODAL OVERLAY -->
+<div id="searchModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-start justify-center pt-20 px-4 sm:px-6">
+  <div class="relative w-full max-w-2xl bg-[#1a1514] border border-[#e7c185]/40 text-[#fbf9f6] p-6 sm:p-8 shadow-2xl">
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between pb-4 border-b border-[#e7c185]/20 mb-6">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#ffd799] animate-pulse"></span>
+        <span class="text-[10px] tracking-[0.28em] uppercase text-[#ffd799] font-medium">Concierge Archive Search</span>
+      </div>
+      <button onclick="closeConciergeSearch()" class="p-1 text-[#fbf9f6]/70 hover:text-white transition-colors cursor-pointer" aria-label="Close search">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+    
+    <!-- Search Input Box -->
+    <div class="relative mb-6">
+      <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#ffd799] text-[20px]">search</span>
+      <input type="text" id="conciergeSearchInput" oninput="renderSearchResults(this.value)" placeholder="Search silhouettes, zardozi, mulberry silk, lehengas..." class="w-full pl-12 pr-4 py-3.5 bg-[#251f1c] border border-[#e7c185]/30 focus:border-[#ffd799] text-white text-[13px] tracking-wide placeholder:text-white/40 focus:outline-none transition-colors" />
+    </div>
+
+    <!-- Quick Filter Chips -->
+    <div class="flex flex-wrap items-center gap-2 mb-4 pb-3 border-b border-[#e7c185]/15 text-[10px] uppercase tracking-wider text-white/60">
+      <span class="text-[#ffd799]">Curations:</span>
+      <button onclick="document.getElementById('conciergeSearchInput').value='Lehenga'; renderSearchResults('Lehenga');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Lehenga</button>
+      <button onclick="document.getElementById('conciergeSearchInput').value='Zardozi'; renderSearchResults('Zardozi');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Zardozi</button>
+      <button onclick="document.getElementById('conciergeSearchInput').value='Sharara'; renderSearchResults('Sharara');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Sharara</button>
+      <button onclick="document.getElementById('conciergeSearchInput').value='Cape'; renderSearchResults('Cape');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Cape</button>
+      <button onclick="document.getElementById('conciergeSearchInput').value='Silk'; renderSearchResults('Silk');" class="px-2.5 py-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 transition-colors cursor-pointer">Mulberry Silk</button>
+    </div>
+
+    <!-- Scrollable Search Results Area -->
+    <div id="searchResultsContainer" class="max-h-[50vh] overflow-y-auto space-y-2 pr-1 custom-scroll">
+      <!-- Injected dynamically by stitch-sync.js -->
+    </div>
+  </div>
+</div>
+
+<!-- 2. PERSONAL ARCHIVE / WISHLIST SLIDE-OVER DRAWER -->
+<div id="wishlistOverlay" onclick="closeWishlistDrawer()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+<aside id="wishlistDrawer" class="fixed top-0 right-0 bottom-0 w-96 max-w-[90vw] bg-[#fbf9f6] border-l border-[#e7c185]/40 z-50 translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 shadow-2xl">
+  <!-- Drawer Header -->
+  <div>
+    <div class="flex items-center justify-between pb-5 border-b border-[#e7c185]/30">
+      <div>
+        <span class="block font-editorial text-2xl tracking-[0.2em] uppercase text-[#120e0d]">Personal Archive</span>
+        <span class="block text-[9px] tracking-[0.3em] uppercase text-[#765928] font-medium mt-0.5">Curated Bespoke Silhouettes (<span class="wishlist-count-badge">0</span>)</span>
+      </div>
+      <button onclick="closeWishlistDrawer()" class="p-2 text-primary hover:text-secondary cursor-pointer" aria-label="Close Archive">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+
+    <!-- Scrollable Saved Silhouettes -->
+    <div id="wishlistItemsContainer" class="max-h-[62vh] overflow-y-auto divide-y divide-[#e7c185]/20 py-2 pr-1">
+      <!-- Injected dynamically by stitch-sync.js -->
+    </div>
+  </div>
+
+  <!-- Drawer Footer Actions -->
+  <div class="pt-5 border-t border-[#e7c185]/30 space-y-3">
+    <button onclick="shareWishlistToWhatsApp()" class="w-full py-3.5 bg-[#1f1b19] hover:bg-black text-[#ffd799] hover:text-white text-[11px] tracking-[0.24em] uppercase font-medium flex items-center justify-center gap-2 border border-[#765928]/40 transition-all shadow-md cursor-pointer">
+      <span class="material-symbols-outlined text-[17px]">forum</span>
+      <span>Inquire Archive on WhatsApp</span>
+    </button>
+    <a href="collections.html" onclick="closeWishlistDrawer()" class="block text-center text-[10px] tracking-[0.22em] uppercase text-outline hover:text-primary transition-colors py-1">
+      Browse More Silhouettes →
+    </a>
+  </div>
+</aside>
+
+<!-- 3. PRIVATE SALON SUITE CONSULTATION BOOKING MODAL -->
+<div id="salonModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+  <div class="relative w-full max-w-lg bg-[#fbf9f6] border border-[#e7c185]/50 p-6 sm:p-8 shadow-2xl">
+    <div class="flex items-start justify-between pb-4 border-b border-[#e7c185]/30 mb-6">
+      <div>
+        <span class="text-[9px] tracking-[0.32em] uppercase text-[#765928] font-semibold block">Sindhu Bhavan Road Flagship</span>
+        <h3 class="font-editorial text-[26px] text-primary font-normal leading-tight">Private Salon Suite</h3>
+        <p class="text-[12px] text-outline font-light mt-1">Four Private Consultations Daily · Strictly Reserved</p>
+      </div>
+      <button onclick="closeSalonAppointmentModal()" class="p-1 text-primary hover:text-secondary cursor-pointer" aria-label="Close">
+        <span class="material-symbols-outlined text-[22px]">close</span>
+      </button>
+    </div>
+
+    <form onsubmit="submitSalonBooking(event)" class="space-y-4 text-left">
+      <div>
+        <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Patron Full Name *</label>
+        <input type="text" id="salonNameInput" required placeholder="e.g. Radhika Ambani" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary" />
+      </div>
+      <div>
+        <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">WhatsApp / Phone Number *</label>
+        <input type="tel" id="salonPhoneInput" required placeholder="e.g. +91 99250 00297" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary" />
+      </div>
+      <div>
+        <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Occasion / Consultation Focus</label>
+        <select id="salonOccasionSelect" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary">
+          <option value="Bridal Trousseau Fitting">Bridal Trousseau Fitting (Wedding / Pheras)</option>
+          <option value="Sangeet & Cocktail Couture">Sangeet & Cocktail Couture</option>
+          <option value="Heirloom Festive Pret">Heirloom Festive Pret / Mehendi</option>
+          <option value="Diaspora Virtual Video Consultation">Diaspora Virtual Video Consultation (Worldwide)</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Preferred Date / Month</label>
+        <input type="date" id="salonDateInput" class="w-full px-4 py-2.5 bg-white border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary" />
+      </div>
+
+      <div class="pt-4">
+        <button type="submit" class="w-full py-3.5 bg-[#1f1b19] hover:bg-black text-[#ffd799] hover:text-white text-[11px] tracking-[0.24em] uppercase font-medium flex items-center justify-center gap-2 border border-[#765928]/40 transition-all shadow-md cursor-pointer">
+          <span class="material-symbols-outlined text-[17px]">event_seat</span>
+          <span>Confirm Salon Request on WhatsApp</span>
+        </button>
+        <p class="text-center text-[10px] text-outline mt-2 italic">Creative Director Mita Manglani & senior drapers personally attend every reserved fitting.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 4. RESPONSIVE MOBILE DRAWER NAVIGATION -->
+<div id="mobileNavOverlay" onclick="toggleMobileNav()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+<aside id="mobileNavDrawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-[#fbf9f6] border-r border-[#e7c185]/40 z-50 -translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 shadow-2xl lg:hidden">
+  <div>
+    <div class="flex items-center justify-between pb-6 border-b border-[#e7c185]/30">
+      <div>
+        <span class="block font-editorial text-2xl tracking-[0.3em] uppercase text-[#120e0d]">M · O · H</span>
+        <span class="block text-[9px] tracking-[0.35em] uppercase text-[#765928] font-medium mt-0.5">Atelier Ahmedabad</span>
+      </div>
+      <button onclick="toggleMobileNav()" class="p-2 text-primary hover:text-secondary cursor-pointer" aria-label="Close Menu">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+    
+    <nav class="flex flex-col gap-4 py-8 text-[12px] tracking-[0.24em] uppercase font-medium">
+      <a href="index.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+        <span>Home Anthology</span>
+        <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+      </a>
+      <a href="collections.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+        <span>The Collections (34)</span>
+        <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+      </a>
+      <a href="collections.html#bridal-trousseau" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+        <span>Bridal Trousseau</span>
+        <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+      </a>
+      <a href="product.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+        <span>Bespoke Silhouette</span>
+        <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+      </a>
+      <a href="atelier.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+        <span>Craft &amp; Guild Heritage</span>
+        <span class="material-symbols-outlined text-[16px] text-[#765928]">arrow_forward</span>
+      </a>
+      <button onclick="toggleMobileNav(); openCartDrawer();" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between text-left cursor-pointer">
+        <span class="flex items-center gap-2">Maison Bag (<span class="cart-count-badge">0</span>)</span>
+        <span class="material-symbols-outlined text-[16px] text-[#765928]">shopping_bag</span>
+      </button>
+      <a href="checkout.html" class="text-primary hover:text-secondary py-1 border-b border-[#e7c185]/20 flex items-center justify-between">
+        <span>Checkout Summary</span>
+        <span class="material-symbols-outlined text-[16px] text-[#765928]">receipt_long</span>
+      </a>
+      <button onclick="toggleMobileNav(); openSalonAppointmentModal();" class="text-[#765928] hover:text-primary py-1 flex items-center justify-between font-semibold text-left cursor-pointer">
+        <span>Private Salon Suite</span>
+        <span class="material-symbols-outlined text-[16px]">verified</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="pt-6 border-t border-[#e7c185]/30 space-y-4">
+    <div class="flex items-center justify-between text-[11px] tracking-[0.2em] uppercase text-outline">
+      <span>Currency:</span>
+      <div class="flex items-center gap-2">
+        <button onclick="setCurrency('INR')" class="currency-inr-btn font-bold text-primary">INR ₹</button>
+        <span>/</span>
+        <button onclick="setCurrency('USD')" class="currency-usd-btn text-outline">USD $</button>
+      </div>
+    </div>
+    <a href="https://wa.me/919925000297?text=Hello%20MOH%20Atelier%20Ahmedabad%2C%20I%20would%20like%20to%20inquire%20about%20a%20private%20bridal%20appointment." target="_blank" class="w-full py-3 bg-[#1f1b19] text-[#ffd799] text-[10px] tracking-[0.24em] uppercase font-medium flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[16px]">forum</span>
+      <span>WhatsApp Concierge (+91 99250 00297)</span>
+    </a>
+    <a href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 border border-[#765928]/30 hover:border-primary text-secondary hover:text-primary text-[10px] tracking-[0.22em] uppercase font-medium flex items-center justify-center gap-2 transition-colors">
+      <span>Follow @mohstudioahmedabad</span>
+    </a>
+  </div>
+</aside>
+
+<!-- MASTER LIVE SYNC SCRIPT -->
+<script src="assets/js/stitch-sync.js"></script>
+</body></html>

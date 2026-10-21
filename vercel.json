@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "moh-studio-ahmedabad",
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

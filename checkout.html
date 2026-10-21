@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout Summary & Order Settlement | MOH Studio Ahmedabad</title>
+<meta content="Review and confirm your handcrafted bespoke trousseau orders with MOH Studio Ahmedabad. Complimentary insured courier and personalized karigar tailoring." name="description"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<!-- Tailwind Play CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'surface': '#fbf9f6',
+            'surface-container-low': '#f5f3f0',
+            'surface-container': '#efece7',
+            'surface-container-high': '#e9e6e1',
+            'surface-container-highest': '#e3e0da',
+            'primary': '#120e0d',
+            'on-surface': '#120e0d',
+            'on-surface-variant': '#52443a',
+            'outline': '#857368',
+            'outline-variant': '#d7c3b5',
+            'secondary': '#765928',
+            'gold-subtle': '#ffd799',
+            'gold-light': '#ffdeac',
+            'gold-deep': '#765928',
+            'accent-gold': '#e7c185'
+          },
+          fontFamily: {
+            'editorial': ['"Bodoni Moda"', 'serif'],
+            'sans': ['"Hanken Grotesk"', 'sans-serif'],
+            'body': ['"Hanken Grotesk"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #fbf9f6;
+      color: #120e0d;
+      font-family: 'Hanken Grotesk', sans-serif;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#765928] selection:text-white">
+<!-- 1. UNIFIED STATELY 3-TIER MAISON NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#fbf9f6]/95 backdrop-blur-md border-b border-[#e7c185]/30">
+<!-- Top Micro Concierge Tier -->
+<div class="w-full bg-[#161211] text-[#e7c185]/90 px-4 sm:px-6 lg:px-16 py-2 flex items-center justify-between text-[11px] tracking-[0.22em] uppercase font-light border-b border-[#765928]/25">
+<div class="flex items-center gap-4">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#e7c185]/80 animate-pulse"></span>
+<span class="text-[#fbf9f6]/80 hidden md:inline">AHMEDABAD ATELIER · PRIVATE SALON</span>
+<span class="text-[#fbf9f6]/80 md:hidden">MOH ATELIER</span>
+</div>
+<div class="flex items-center gap-4 sm:gap-6">
+<a class="hover:text-white transition-colors flex items-center gap-1.5" href="https://wa.me/919925000297" target="_blank">
+<span class="material-symbols-outlined text-[13px] text-[#e7c185]">forum</span>
+<span class="hidden sm:inline">WhatsApp Concierge (+91 99250 00297)</span>
+</a>
+<span class="moh-concierge-sep text-[#765928]/60">|</span>
+<div class="moh-currency-row flex items-center gap-2 tracking-[0.16em]">
+<button class="currency-inr-btn font-normal text-white" onclick="setCurrency('INR')">INR ₹</button>
+<span class="text-white/30">/</span>
+<button class="currency-usd-btn text-[#fbf9f6]/60 hover:text-white transition-colors" onclick="setCurrency('USD')">USD $</button>
+</div>
+</div>
+</div>
+<!-- Centered Haute Couture Identity -->
+<div class="moh-header-mid pt-3 sm:pt-5 pb-3 sm:pb-4 px-4 sm:px-6 lg:px-16 flex items-center justify-between border-b border-[#e7c185]/20">
+<!-- Left Utility -->
+<div class="moh-left-utility flex items-center gap-3 sm:gap-5 w-1/4">
+<button aria-label="Open Navigation" class="lg:hidden p-1.5 text-primary hover:text-secondary cursor-pointer" onclick="toggleMobileNav()">
+<span class="material-symbols-outlined text-[22px] sm:text-[24px]">menu</span>
+</button>
+<button class="flex items-center gap-2 group text-left cursor-pointer" onclick="openConciergeSearch()">
+<span class="material-symbols-outlined text-[18px] sm:text-[20px] text-primary group-hover:text-secondary transition-colors">search</span>
+<span class="text-[11px] tracking-[0.24em] uppercase text-on-surface-variant group-hover:text-primary transition-colors hidden xl:inline">Concierge Search</span>
+</button>
+</div>
+<!-- Center Grand Brand Seal -->
+<div class="w-2/4 text-center">
+<a class="inline-block group" href="index.html">
+<span class="moh-logo-wordmark block font-editorial text-[26px] sm:text-[34px] md:text-[38px] tracking-[0.32em] sm:tracking-[0.38em] text-primary font-normal leading-none group-hover:text-secondary transition-colors duration-500 pl-1 sm:pl-2" style="font-family: 'Bodoni Moda', Didot, serif;">
+            M · O · H
+          </span>
+<span class="moh-logo-sub block text-[8px] sm:text-[10px] md:text-[11px] tracking-[0.3em] sm:tracking-[0.42em] uppercase text-[#765928] font-medium mt-1">
+            Atelier · Ahmedabad
+          </span>
+</a>
+</div>
+<!-- Right Utility: Archive Wishlist, Maison Bag & Salon Suite CTA -->
+<div class="moh-right-utility flex items-center justify-end gap-2 sm:gap-3 md:gap-6 w-1/4">
+<button class="relative flex items-center gap-1.5 p-1 text-primary hover:text-secondary cursor-pointer transition-colors" onclick="openWishlistDrawer()" title="View Personal Archive">
+<span class="material-symbols-outlined text-[19px] sm:text-[21px]">favorite_border</span>
+<span class="wishlist-count-badge inline-flex items-center justify-center w-4 h-4 bg-[#765928] text-white text-[9px] font-bold rounded-full">0</span>
+</button>
+<!-- Maison Bag Trigger -->
+<button class="relative flex items-center gap-1.5 p-1 text-primary hover:text-secondary cursor-pointer transition-colors" onclick="openCartDrawer()" title="View Maison Bag">
+<span class="material-symbols-outlined text-[19px] sm:text-[21px]">shopping_bag</span>
+<span class="cart-count-badge inline-flex items-center justify-center w-4 h-4 bg-[#1f1b19] text-[#ffd799] text-[9px] font-bold rounded-full border border-[#765928]/40">0</span>
+</button>
+<button class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 border border-[#765928]/60 text-primary hover:bg-[#120e0d] hover:text-[#ffd799] hover:border-[#120e0d] text-[10.5px] tracking-[0.24em] uppercase font-medium transition-all duration-300 shadow-sm cursor-pointer" onclick="openSalonAppointmentModal()">
+<span>Private Salon</span>
+</button>
+</div>
+</div>
+<!-- Architectural Navigation Bar -->
+<nav class="hidden lg:flex items-center justify-center gap-8 py-3 bg-[#fbf9f6]/90">
+<a class="relative text-[11px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="index.html">
+        Home
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[11px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="collections.html">
+        Collections
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[11px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="collections.html#bridal-trousseau">
+        Bridal &amp; Trousseau
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[11px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="product.html">
+        Bespoke Silhouette
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[11px] tracking-[0.22em] uppercase text-primary/80 hover:text-primary transition-colors pb-1 group" href="atelier.html">
+        Craft &amp; Guild Heritage
+        <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#765928] group-hover:w-full transition-all duration-300"></span>
+</a>
+<span class="text-[#e7c185]/50 text-xs">·</span>
+<a class="relative text-[11px] tracking-[0.22em] uppercase text-[#765928] font-medium transition-colors pb-1 group" href="checkout.html">
+        Maison Checkout
+        <span class="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#765928]"></span>
+</a>
+</nav>
+</header>
+
+<main class="moh-main w-full pb-24">
+  <!-- PAGE HEADER & BREADCRUMB -->
+  <section class="w-full bg-[#161211] text-[#fbf9f6] py-10 sm:py-14 px-4 sm:px-12 lg:px-20 border-b border-[#765928]/30">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 text-[9.5px] sm:text-[10px] tracking-[0.26em] sm:tracking-[0.3em] uppercase text-[#ffd799] font-medium mb-2.5">
+          <span>ATELIER DOSSIER</span>
+          <span class="text-[#765928]">✦</span>
+          <span>STEP 02 OF 02 · ORDER SETTLEMENT</span>
+        </div>
+        <h1 class="font-editorial text-[28px] sm:text-[38px] md:text-[46px] text-white tracking-tight font-normal leading-tight">
+          Maison Order <span class="italic text-[#ffd799]">Summary &amp; Checkout</span>
+        </h1>
+      </div>
+      <div class="flex items-center gap-3 sm:gap-4 text-[10px] sm:text-[10.5px] uppercase tracking-[0.22em] sm:tracking-[0.24em] text-white/70">
+        <span class="flex items-center gap-1.5 sm:gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>Insured Transit</span>
+        <span>·</span>
+        <span>Karigar Verified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPTY CART STATE -->
+  <div id="checkoutEmptyState" class="hidden max-w-2xl mx-auto py-24 px-6 text-center">
+    <div class="w-20 h-20 rounded-full bg-[#efece7] flex items-center justify-center mx-auto mb-6 text-[#765928]">
+      <span class="material-symbols-outlined text-[36px]">shopping_bag</span>
+    </div>
+    <h3 class="font-editorial text-[28px] text-primary mb-3">Your Maison Bag is Currently Empty</h3>
+    <p class="font-sans text-[14px] text-on-surface-variant font-light mb-8 max-w-md mx-auto leading-relaxed">
+      You have not selected any couture silhouettes or bridal trousseau ensembles for checkout. Browse our exhibits to add pieces.
+    </p>
+    <a href="collections.html" class="inline-flex items-center gap-3 px-8 py-4 bg-[#1f1b19] text-[#ffd799] text-[11px] uppercase tracking-[0.24em] font-medium hover:bg-black transition-all border border-[#765928]/40 shadow-lg">
+      <span>Explore Collections</span>
+      <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+    </a>
+  </div>
+
+  <!-- CHECKOUT CONTENT STATE (TWO COLUMNS) -->
+  <div id="checkoutContentState" class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-20 mt-8 sm:mt-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
+      
+      <!-- LEFT COLUMN: PATRON RECORD & BESPOKE INTAKE -->
+      <div class="lg:col-span-7">
+        <form onsubmit="submitCheckoutOrder(event)" id="checkoutForm" class="space-y-6 sm:space-y-8 bg-white border border-[#e7c185]/40 p-4 sm:p-8 lg:p-10 shadow-sm">
+          
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-[#e7c185]/30 mb-6">
+              <h3 class="font-editorial text-[22px] text-primary">01. Patron Identity</h3>
+              <span class="text-[9.5px] uppercase tracking-[0.2em] text-[#765928] font-semibold">Strictly Confidential</span>
+            </div>
+            
+            <div class="space-y-4">
+              <div>
+                <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Patron Full Name *</label>
+                <input type="text" id="patronName" required placeholder="e.g. Radhika Ambani" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">WhatsApp / Phone *</label>
+                  <input type="tel" id="patronPhone" required placeholder="+91 99250 12345" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Email Address *</label>
+                  <input type="email" id="patronEmail" required placeholder="patron@domain.com" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-[#e7c185]/30 mb-6">
+              <h3 class="font-editorial text-[22px] text-primary">02. Atelier Delivery Address</h3>
+              <span class="text-[9.5px] uppercase tracking-[0.2em] text-[#765928] font-semibold">Insured Transit</span>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Street Address / Suite / Estate *</label>
+                <input type="text" id="patronAddress" required placeholder="House/Apartment number, street name" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">City *</label>
+                  <input type="text" id="patronCity" required placeholder="e.g. Ahmedabad / Mumbai / London" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Postal / ZIP Code</label>
+                  <input type="text" id="patronZip" placeholder="380058" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Country *</label>
+                  <input type="text" id="patronCountry" required value="India" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-[#e7c185]/30 mb-6">
+              <h3 class="font-editorial text-[22px] text-primary">03. Bespoke Tailoring &amp; Occasion</h3>
+              <span class="text-[9.5px] uppercase tracking-[0.2em] text-[#765928] font-semibold">Custom Drapes</span>
+            </div>
+            <div class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Target Wedding / Event Date</label>
+                  <input type="date" id="targetDate" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors" />
+                </div>
+                <div>
+                  <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Fitting / Virtual Call Preference</label>
+                  <select id="fittingPreference" class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors">
+                    <option value="Ahmedabad Salon In-Person Fitting">Ahmedabad Salon In-Person Fitting</option>
+                    <option value="Virtual Video Fitting Call (Zoom/WhatsApp)">Virtual Video Fitting Call (Zoom/WhatsApp)</option>
+                    <option value="Standard Fit as Selected">Standard Fit as Selected</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-[10px] uppercase tracking-[0.2em] text-primary font-medium mb-1.5">Custom Measurements / Neckline / Sleeve Notes</label>
+                <textarea id="patronNotes" rows="3" placeholder="Specify blouse padding, neckline depth, lehenga height with heels, or any karigar customization preferences..." class="w-full px-4 py-3 bg-[#fbf9f6] border border-[#e7c185]/40 text-primary text-[13px] focus:outline-none focus:border-primary transition-colors"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button type="submit" class="w-full py-3.5 sm:py-4 px-3 sm:px-4 bg-[#1f1b19] hover:bg-black text-[#ffd799] hover:text-white text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.26em] uppercase font-semibold flex items-center justify-center gap-2 sm:gap-3 border border-[#765928]/40 transition-all shadow-xl cursor-pointer text-center">
+              <span class="material-symbols-outlined text-[18px] sm:text-[19px]">forum</span>
+              <span>Confirm &amp; Place Order via WhatsApp Concierge</span>
+            </button>
+            <p class="text-center text-[10px] text-outline font-light mt-3 italic">
+              Creative Director Mita Manglani &amp; our senior salon host personally acknowledge all orders on WhatsApp within 2 hours.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT COLUMN: ORDER SUMMARY & PAYMENT GUIDELINES -->
+      <div class="lg:col-span-5">
+        <div class="sticky top-40 space-y-6">
+          
+          <!-- Summary Card -->
+          <div class="bg-white border border-[#e7c185]/40 p-4 sm:p-8 shadow-sm">
+            <div class="flex items-center justify-between pb-4 border-b border-[#e7c185]/30 mb-6">
+              <h3 class="font-editorial text-[20px] text-primary">Cart Summary</h3>
+              <a href="collections.html" class="text-[10px] uppercase tracking-wider text-[#765928] hover:text-primary transition-colors font-medium">Add More Pieces +</a>
+            </div>
+
+            <!-- Items List -->
+            <div id="checkoutItemsList" class="divide-y divide-[#e7c185]/20 max-h-[40vh] overflow-y-auto mb-6 pr-1"></div>
+
+            <!-- Price Breakdown -->
+            <div class="space-y-3 pt-4 border-t border-[#e7c185]/30 text-[13px]">
+              <div class="flex items-center justify-between text-on-surface-variant font-light">
+                <span>Estimated Subtotal:</span>
+                <span id="checkoutSubtotal" class="font-semibold text-primary">₹0</span>
+              </div>
+              <div class="flex items-center justify-between text-on-surface-variant font-light">
+                <span>Insured Heritage Courier:</span>
+                <span class="text-[#765928] font-medium tracking-wide uppercase text-[11px]">Complimentary</span>
+              </div>
+              <div class="flex items-center justify-between text-on-surface-variant font-light">
+                <span>Handcrafted Muslin Cover:</span>
+                <span class="text-[#765928] font-medium tracking-wide uppercase text-[11px]">Included</span>
+              </div>
+              <div class="pt-4 border-t border-[#e7c185]/30 flex items-center justify-between text-primary">
+                <span class="text-[12px] uppercase tracking-[0.24em] font-medium">Total Payable:</span>
+                <span id="checkoutTotal" class="font-editorial text-[24px] font-bold text-primary">₹0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bank Wire & Diaspora Settlement Guidance -->
+          <div class="bg-[#f5f3f0] border border-[#e7c185]/30 p-4 sm:p-6 text-[12px] text-on-surface-variant space-y-3">
+            <div class="flex items-center gap-2 text-primary font-medium uppercase tracking-[0.2em] text-[10.5px]">
+              <span class="material-symbols-outlined text-[17px] text-[#765928]">account_balance</span>
+              <span>Settlement Options</span>
+            </div>
+            <p class="font-light leading-relaxed">
+              We accept official RTGS/NEFT/IMPS bank transfers, domestic UPI (<code class="bg-white/80 px-1 py-0.5 border border-[#e7c185]/30 text-[#765928] font-mono">mohstudio@okhdfcbank</code>), and international SWIFT wire transfers.
+            </p>
+            <p class="font-light leading-relaxed">
+              Upon submitting, our WhatsApp Concierge provides you with the verified pro-forma invoice and bank coordinates.
+            </p>
+          </div>
+
+          <!-- Security & Provenance Badge -->
+          <div class="p-3.5 sm:p-4 border border-[#e7c185]/30 bg-white flex items-center gap-3 sm:gap-4">
+            <span class="material-symbols-outlined text-[24px] sm:text-[26px] text-[#765928]">verified_user</span>
+            <div>
+              <span class="text-[10px] uppercase tracking-widest text-primary font-semibold block">100% Authentic Handcraft</span>
+              <span class="text-[11px] text-outline font-light">Direct from the Sindhu Bhavan Road Atelier Guild.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- STATELY LUXURY MAISON FOOTER -->
+<footer class="w-full bg-[#120e0d] text-[#fbf9f6] pt-24 pb-14 border-t border-[#765928]/30">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14 mb-20">
+      <!-- Brand Narrative & Seal -->
+      <div class="lg:col-span-4 pr-0 lg:pr-6">
+        <span class="block font-editorial text-[32px] tracking-[0.34em] text-[#ffd799] font-normal leading-none mb-2">M · O · H</span>
+        <p class="font-editorial italic text-[#e7c185] text-[15px] mb-4">Curated by Mita Manglani · Ahmedabad</p>
+        <p class="font-sans text-[13px] text-[#fbf9f6]/70 leading-relaxed font-light mb-6">
+          An esteemed sanctum of deliberate handcrafted couture, bespoke bridal heirlooms, and rare needlework preserving Gujarat’s royal textile lineages.
+        </p>
+        <div class="inline-flex items-center gap-2 text-[10px] tracking-[0.24em] uppercase text-[#ffd799] border border-[#ffd799]/30 px-3 py-1.5 bg-black/40">
+          <span class="material-symbols-outlined text-[15px]">verified</span>
+          <span>Heritage Artisanal Guild Member</span>
+        </div>
+      </div>
+
+      <!-- Flagship Address & Timings -->
+      <div class="lg:col-span-3">
+        <h4 class="text-[11px] tracking-[0.28em] uppercase text-[#ffd799] mb-5 font-medium">Ahmedabad Flagship Atelier</h4>
+        <p class="text-[13px] text-[#fbf9f6]/70 leading-relaxed font-light mb-3">
+          Behind R.K. Party Plot, PRL Colony,<br/>
+          Off Sindhu Bhavan Road, Ambli,<br/>
+          Ahmedabad, Gujarat 380058, India
+        </p>
+        <p class="text-[13px] text-[#fbf9f6]/70 font-light mb-3">
+          Hours: Monday – Saturday<br/>
+          11:00 AM – 7:30 PM IST (Private Salon)
+        </p>
+        <p class="text-[12px] text-[#ffd799] font-medium tracking-wide">
+          Concierge: <a href="tel:+919925000297" class="hover:text-white transition-colors">+91 99250 00297</a>
+        </p>
+      </div>
+
+      <!-- Bespoke Services -->
+      <div class="lg:col-span-2">
+        <h4 class="text-[11px] tracking-[0.28em] uppercase text-[#ffd799] mb-5 font-medium">Salon Services</h4>
+        <ul class="space-y-3 text-[13px] text-[#fbf9f6]/70 font-light">
+          <li><a class="hover:text-white transition-colors" href="collections.html">Bridal Trousseau</a></li>
+          <li><a class="hover:text-white transition-colors" href="product.html">Global Virtual Styling</a></li>
+          <li><a class="hover:text-white transition-colors" href="atelier.html">Heirloom Preservation</a></li>
+          <li><a class="hover:text-white transition-colors" href="atelier.html">Custom Marodi Weaves</a></li>
+          <li><a class="hover:text-white transition-colors" href="product.html">Private Client Suite</a></li>
+        </ul>
+      </div>
+
+      <!-- Private Newsletter & Atelier Diary -->
+      <div class="lg:col-span-3">
+        <h4 class="text-[11px] tracking-[0.28em] uppercase text-[#ffd799] mb-5 font-medium">Seasonal Private Previews</h4>
+        <p class="text-[13px] text-[#fbf9f6]/70 font-light leading-relaxed mb-4">
+          Receive private monograph lookbooks, trunk invitations, and unreleased bridal anthology drops.
+        </p>
+        <div class="flex items-center border-b border-[#e7c185]/40 py-2">
+          <input class="bg-transparent text-[11px] tracking-[0.2em] uppercase text-white placeholder:text-white/40 focus:outline-none flex-1" placeholder="PATRON EMAIL ADDRESS" type="email"/>
+          <button class="text-[10px] tracking-[0.26em] uppercase text-[#ffd799] hover:text-white transition-colors font-medium">REQUEST</button>
+        </div>
+        <div class="mt-6 flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-white/50">
+          <span>Atelier Diary:</span>
+          <a class="text-[#ffd799] hover:text-white transition-colors font-medium underline underline-offset-4" href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer">@mohstudioahmedabad</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright & Legal -->
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-white/40 font-light">
+      <p>© 2025 MOH ATELIER AHMEDABAD BY MITA MANGLANI. ALL RIGHTS RESERVED.</p>
+      <div class="flex items-center gap-8">
+        <a class="hover:text-white transition-colors" href="https://www.instagram.com/mohstudioahmedabad/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="hover:text-white transition-colors" href="atelier.html">Artisan Guilds</a>
+        <a class="hover:text-white transition-colors" href="collections.html">Anthology</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MASTER LIVE SYNC SCRIPT -->
+<script src="assets/js/stitch-sync.js"></script>
+</body>
+</html>
