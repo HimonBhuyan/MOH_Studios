@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en"><head>
 <meta charset="utf-8"/>
@@ -7,13 +7,32 @@
 <style>
     @layer base {
       html, body { margin:0; padding:0; }
-      body { overscroll-behavior: none; }
+      body { overscroll-behavior: none; overflow-x: hidden; }
       main > :first-child { margin-top: 0 !important; }
       main > :last-child { margin-bottom: 0 !important; }
     }
     ::-webkit-scrollbar { display: none; }
+    /* ── Mobile-first responsive overrides ── */
+    @media (max-width: 767px) {
+      .moh-main { overflow-x: hidden; }
+      /* Ensure product card title+price don't overflow */
+      .moh-card-meta { flex-wrap: wrap; gap: 0.5rem; }
+      /* Stats row wraps gracefully */
+      .moh-stats-row { flex-wrap: wrap; gap: 0.75rem 1rem; justify-content: center; }
+      /* Filter row scrolls without showing bar */
+      .moh-filter-row { -webkit-overflow-scrolling: touch; }
+      /* Reduce section padding on xs phones */
+      .moh-section-pad { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+      /* Bridal dark section text */
+      .moh-bridal-title { font-size: 2rem !important; line-height: 1.15 !important; }
+      /* Card grid on xs — full width single column */
+      .moh-grid { gap-y: 3rem; }
+    }
+    @media (max-width: 480px) {
+      .moh-bridal-title { font-size: 1.75rem !important; }
+      .moh-hero-title { font-size: 2.25rem !important; line-height: 1.1 !important; }
+    }
   </style>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -51,6 +70,7 @@
             "gold-antique": "#96783e",
             "gold-subtle": "#c5a868",
             "gold-border": "#ded1ba",
+            "gold-cream": "#faf7f2",
             "inverse-surface": "#30312f",
             "error": "#ba1a1a",
             "on-tertiary-container": "#9b8146",
@@ -88,24 +108,6 @@
             "margin": "4rem",
             "margin-mobile": "1.25rem"
           },
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "gold-antique": "#a6833c",
-            "gold-subtle": "#c5a869",
-            "gold-border": "#decba5",
-            "gold-cream": "#faf7f2",
-            "on-primary": "#ffffff",
-            "surface-dim": "#dedad5",
-            "surface": "#fbf9f6",
-            "on-surface-variant": "#4b4643",
-            "surface-container-low": "#f5f3ef",
-            "surface-container": "#efedc9",
-            "primary": "#120f0d",
-            "secondary": "#765928"
-          },
           fontFamily: {
             "serif": ["Bodoni Moda", "Didot", "Playfair Display", "serif"],
             "editorial": ["Bodoni Moda", "Didot", "serif"],
@@ -113,8 +115,9 @@
           }
         }
       }
-    }
+    };
   </script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&amp;family=Hanken+Grotesk:ital,wght@0,200..700;1,300..500&amp;display=swap" rel="stylesheet"/>
@@ -218,40 +221,40 @@
 </header>
 <main class="moh-main w-full bg-surface min-h-screen">
 <!-- Editorial Introductory Masthead -->
-<header class="w-full pt-14 sm:pt-20 pb-12 border-b border-gold-border/30">
-<div class="max-w-[1720px] mx-auto px-margin-mobile md:px-margin">
+<header class="w-full pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-14 border-b border-gold-border/30">
+<div class="max-w-[1720px] mx-auto px-4 sm:px-margin-mobile md:px-margin">
 <div class="text-center max-w-4xl mx-auto">
 <!-- Series Label -->
 <div class="inline-flex items-center justify-center gap-3 mb-4">
-<span class="w-8 h-[1px] bg-gold-antique/70"></span>
-<span class="text-[10.5px] uppercase tracking-[0.32em] font-medium text-gold-antique">
+<span class="w-6 sm:w-8 h-[1px] bg-gold-antique/70"></span>
+<span class="text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.26em] sm:tracking-[0.32em] font-medium text-gold-antique">
               THE AHMEDABAD ANTHOLOGY · SERIES VII
             </span>
-<span class="w-8 h-[1px] bg-gold-antique/70"></span>
+<span class="w-6 sm:w-8 h-[1px] bg-gold-antique/70"></span>
 </div>
 <!-- Stately Title -->
-<h1 class="font-serif text-[42px] sm:text-[62px] lg:text-[74px] font-normal tracking-tight text-primary leading-[1.06] mb-6">
+<h1 class="moh-hero-title font-serif text-[36px] sm:text-[52px] lg:text-[74px] font-normal tracking-tight text-primary leading-[1.06] mb-5 sm:mb-6">
             The Trousseau &amp; Heirloom Edit
           </h1>
 <!-- Curatorial Note -->
-<p class="font-serif italic text-base sm:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed font-light mb-8">
+<p class="font-serif italic text-[15px] sm:text-lg lg:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed font-light mb-6 sm:mb-8 px-2 sm:px-0">
             An intimate curation of hand-spun Chanderi silks, unbleached mulberry tussar, and heritage gilded needlework—engineered with architectural restraint in the Bodakdev atelier.
           </p>
-<div class="flex items-center justify-center gap-6 text-[10.5px] uppercase tracking-[0.25em] text-outline">
+<div class="moh-stats-row flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-6 text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-outline">
 <span>34 Archived Silhouettes</span>
-<span class="text-gold-antique">✦</span>
+<span class="text-gold-antique hidden sm:inline">✦</span>
 <span>Made to Measure &amp; Guild Certified</span>
-<span class="text-gold-antique">✦</span>
+<span class="text-gold-antique hidden sm:inline">✦</span>
 <span>Autumn / Festive 2025</span>
 </div>
 </div>
 </div>
 </header>
 <!-- Minimalist Gallery-Grade Filter & Curation Architecture -->
-<nav aria-label="Collections and Filters" class="relative md:sticky md:top-24 z-30 bg-surface/98 backdrop-blur-md border-b border-gold-border/50 py-2.5 sm:py-3.5">
-<div class="max-w-[1720px] mx-auto px-4 sm:px-margin-mobile md:px-margin flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 sm:gap-4">
+<nav aria-label="Collections and Filters" class="relative sticky top-[108px] sm:top-[130px] lg:top-[152px] z-30 bg-surface/98 backdrop-blur-md border-b border-gold-border/50 py-2.5 sm:py-3.5">
+<div class="max-w-[1720px] mx-auto px-4 sm:px-margin-mobile md:px-margin flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2 sm:gap-4">
 <!-- Hairline Bordered Filter Pills -->
-<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
+<div class="moh-filter-row flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5">
 <button class="px-3 sm:px-4 py-1.5 sm:py-2 border border-primary bg-primary text-[#faf8f5] text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] sm:tracking-[0.24em] font-medium whitespace-nowrap transition-all shadow-sm">
             All Silhouettes (34)
           </button>
@@ -301,8 +304,8 @@
 </div>
 </nav>
 <!-- Staggered Editorial Couture Grid -->
-<section class="max-w-[1720px] mx-auto px-margin-mobile md:px-margin py-14 sm:py-20">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-16 sm:gap-y-24">
+<section class="max-w-[1720px] mx-auto px-4 sm:px-margin-mobile md:px-margin py-10 sm:py-16 lg:py-20">
+<div class="moh-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 md:gap-x-8 lg:gap-x-12 gap-y-10 sm:gap-y-16 lg:gap-y-24">
 <!-- Exhibit 01: Saffron Zari Lehenga Ensemble -->
 <article class="group flex flex-col">
 <div class="relative w-full aspect-[3/4.25] overflow-hidden bg-surface-container border border-gold-border/40">
@@ -327,12 +330,12 @@
 </div>
 </div>
 <!-- Exhibit Typographic Plaque -->
-<div class="pt-5 flex flex-col flex-1">
-<div class="flex items-baseline justify-between gap-4 mb-1.5">
-<h3 class="font-serif text-[22px] sm:text-[24px] text-primary tracking-tight font-normal">
+<div class="pt-4 sm:pt-5 flex flex-col flex-1">
+<div class="moh-card-meta flex items-baseline justify-between gap-2 sm:gap-4 mb-1.5">
+<h3 class="font-serif text-[19px] sm:text-[22px] lg:text-[24px] text-primary tracking-tight font-normal min-w-0">
                 <a href="product.html?id=saffron-zari" class="hover:text-gold-antique transition-colors">Saffron Zari Lehenga</a>
               </h3>
-<span class="font-sans text-[15px] font-semibold tracking-wide text-primary" data-inr-price="145000">₹1,45,000</span>
+<span class="font-sans text-[14px] sm:text-[15px] font-semibold tracking-wide text-primary flex-shrink-0" data-inr-price="145000">₹1,45,000</span>
 </div>
 <p class="font-serif italic text-[14px] text-on-surface-variant/90 mb-3">
               Hand-spun Chanderi Silk &amp; Dabka Zardozi
@@ -374,12 +377,12 @@
 </a>
 </div>
 </div>
-<div class="pt-5 flex flex-col flex-1">
-<div class="flex items-baseline justify-between gap-4 mb-1.5">
-<h3 class="font-serif text-[22px] sm:text-[24px] text-primary tracking-tight font-normal">
+<div class="pt-4 sm:pt-5 flex flex-col flex-1">
+<div class="moh-card-meta flex items-baseline justify-between gap-2 sm:gap-4 mb-1.5">
+<h3 class="font-serif text-[19px] sm:text-[22px] lg:text-[24px] text-primary tracking-tight font-normal min-w-0">
                 <a href="product.html?id=russet-silk" class="hover:text-gold-antique transition-colors">Russet Raw Silk Kurta</a>
               </h3>
-<span class="font-sans text-[15px] font-semibold tracking-wide text-primary" data-inr-price="44000">₹44,000</span>
+<span class="font-sans text-[14px] sm:text-[15px] font-semibold tracking-wide text-primary flex-shrink-0" data-inr-price="44000">₹44,000</span>
 </div>
 <p class="font-serif italic text-[14px] text-on-surface-variant/90 mb-3">
               Wild Mulberry Silk &amp; Antique Marodi Edging
@@ -421,12 +424,12 @@
 </a>
 </div>
 </div>
-<div class="pt-5 flex flex-col flex-1">
-<div class="flex items-baseline justify-between gap-4 mb-1.5">
-<h3 class="font-serif text-[22px] sm:text-[24px] text-primary tracking-tight font-normal">
+<div class="pt-4 sm:pt-5 flex flex-col flex-1">
+<div class="moh-card-meta flex items-baseline justify-between gap-2 sm:gap-4 mb-1.5">
+<h3 class="font-serif text-[19px] sm:text-[22px] lg:text-[24px] text-primary tracking-tight font-normal min-w-0">
                 <a href="product.html?id=midnight-velvet" class="hover:text-gold-antique transition-colors">Midnight Velvet Cape</a>
               </h3>
-<span class="font-sans text-[15px] font-semibold tracking-wide text-primary" data-inr-price="78000">₹78,000</span>
+<span class="font-sans text-[14px] sm:text-[15px] font-semibold tracking-wide text-primary flex-shrink-0" data-inr-price="78000">₹78,000</span>
 </div>
 <p class="font-serif italic text-[14px] text-on-surface-variant/90 mb-3">
               Micro-Velvet Drapes &amp; Hand-Cut Dana Beading
@@ -468,12 +471,12 @@
 </a>
 </div>
 </div>
-<div class="pt-5 flex flex-col flex-1">
-<div class="flex items-baseline justify-between gap-4 mb-1.5">
-<h3 class="font-serif text-[22px] sm:text-[24px] text-primary tracking-tight font-normal">
+<div class="pt-4 sm:pt-5 flex flex-col flex-1">
+<div class="moh-card-meta flex items-baseline justify-between gap-2 sm:gap-4 mb-1.5">
+<h3 class="font-serif text-[19px] sm:text-[22px] lg:text-[24px] text-primary tracking-tight font-normal min-w-0">
                 <a href="product.html?id=chandballi-anarkali" class="hover:text-gold-antique transition-colors">Chandballi Silk Anarkali</a>
               </h3>
-<span class="font-sans text-[15px] font-semibold tracking-wide text-primary" data-inr-price="58000">₹58,000</span>
+<span class="font-sans text-[14px] sm:text-[15px] font-semibold tracking-wide text-primary flex-shrink-0" data-inr-price="58000">₹58,000</span>
 </div>
 <p class="font-serif italic text-[14px] text-on-surface-variant/90 mb-3">
               Ivory Chanderi Weave &amp; Metallic Mukaish Foil
@@ -515,12 +518,12 @@
 </a>
 </div>
 </div>
-<div class="pt-5 flex flex-col flex-1">
-<div class="flex items-baseline justify-between gap-4 mb-1.5">
-<h3 class="font-serif text-[22px] sm:text-[24px] text-primary tracking-tight font-normal">
+<div class="pt-4 sm:pt-5 flex flex-col flex-1">
+<div class="moh-card-meta flex items-baseline justify-between gap-2 sm:gap-4 mb-1.5">
+<h3 class="font-serif text-[19px] sm:text-[22px] lg:text-[24px] text-primary tracking-tight font-normal min-w-0">
                 <a href="product.html?id=tangerine-sharara" class="hover:text-gold-antique transition-colors">Tangerine Resham Sharara</a>
               </h3>
-<span class="font-sans text-[15px] font-semibold tracking-wide text-primary" data-inr-price="52000">₹52,000</span>
+<span class="font-sans text-[14px] sm:text-[15px] font-semibold tracking-wide text-primary flex-shrink-0" data-inr-price="52000">₹52,000</span>
 </div>
 <p class="font-serif italic text-[14px] text-on-surface-variant/90 mb-3">
               Crepe de Chine Silk &amp; Intricate Floral Resham
@@ -562,12 +565,12 @@
 </a>
 </div>
 </div>
-<div class="pt-5 flex flex-col flex-1">
-<div class="flex items-baseline justify-between gap-4 mb-1.5">
-<h3 class="font-serif text-[22px] sm:text-[24px] text-primary tracking-tight font-normal">
+<div class="pt-4 sm:pt-5 flex flex-col flex-1">
+<div class="moh-card-meta flex items-baseline justify-between gap-2 sm:gap-4 mb-1.5">
+<h3 class="font-serif text-[19px] sm:text-[22px] lg:text-[24px] text-primary tracking-tight font-normal min-w-0">
                 <a href="product.html?id=gilded-ochre" class="hover:text-gold-antique transition-colors">Gilded Ochre Lehenga</a>
               </h3>
-<span class="font-sans text-[15px] font-semibold tracking-wide text-primary" data-inr-price="125000">₹1,25,000</span>
+<span class="font-sans text-[14px] sm:text-[15px] font-semibold tracking-wide text-primary flex-shrink-0" data-inr-price="125000">₹1,25,000</span>
 </div>
 <p class="font-serif italic text-[14px] text-on-surface-variant/90 mb-3">
               Pure Handspun Mulberry Silk &amp; Marodi Embroidery
@@ -591,7 +594,7 @@
 </div>
 </section>
 <!-- Architectural Interstitial: The Private Bridal Trousseau Experience -->
-<section class="w-full bg-[#161210] text-[#f4efe8] py-20 sm:py-28 relative overflow-hidden border-y border-[#322923]" id="bridal-suite">
+<section class="w-full bg-[#161210] text-[#f4efe8] py-14 sm:py-20 lg:py-28 relative overflow-hidden border-y border-[#322923]" id="bridal-suite">
 <!-- Background Architectural Geometry -->
 <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-10 pointer-events-none select-none">
 <svg fill="none" height="600" stroke="#d5c4a1" stroke-width="0.3" viewbox="0 0 100 100" width="600">
@@ -600,21 +603,21 @@
 <path d="M50 2 L50 98 M2 50 L98 50 M16 16 L84 84 M16 84 L84 16"></path>
 </svg>
 </div>
-<div class="max-w-[1720px] mx-auto px-margin-mobile md:px-margin relative z-10">
+<div class="max-w-[1720px] mx-auto px-4 sm:px-margin-mobile md:px-margin relative z-10">
 <div class="max-w-3xl">
 <div class="flex items-center gap-3 mb-4">
-<span class="w-10 h-[1px] bg-gold-subtle"></span>
-<span class="text-[10px] uppercase tracking-[0.3em] font-medium text-gold-subtle">
+<span class="w-8 sm:w-10 h-[1px] bg-gold-subtle"></span>
+<span class="text-[9.5px] sm:text-[10px] uppercase tracking-[0.26em] sm:tracking-[0.3em] font-medium text-gold-subtle">
               ATELIER SALON &amp; DIASPORA SUITE
             </span>
 </div>
-<h2 class="font-serif text-[38px] sm:text-[54px] lg:text-[62px] font-normal tracking-tight text-white leading-[1.08] mb-6">
+<h2 class="moh-bridal-title font-serif text-[30px] sm:text-[46px] lg:text-[62px] font-normal tracking-tight text-white leading-[1.1] mb-5 sm:mb-6">
             The Private Bridal Trousseau Experience
           </h2>
-<p class="font-sans text-[15px] sm:text-[17px] text-[#cfc7be] leading-relaxed font-light mb-10 max-w-2xl">
+<p class="font-sans text-[14px] sm:text-[15px] lg:text-[17px] text-[#cfc7be] leading-relaxed font-light mb-8 sm:mb-10 max-w-2xl">
             An uninterrupted private salon walkthrough tailored for discerning domestic and global diaspora brides. Creative Director Mita Manglani guides every nuance—from custom zardozi calligraphy and silhouette architecture to hand-dyed heirloom borders.
           </p>
-<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
 <button onclick="openSalonAppointmentModal()" class="inline-flex items-center justify-center px-8 py-4 bg-gold-subtle text-[#14100e] text-[11px] uppercase tracking-[0.26em] font-semibold hover:bg-white transition-all shadow-md cursor-pointer">
               Schedule Salon Walkthrough
             </button>
@@ -623,7 +626,7 @@
 <span>Virtual Concierge Desk</span>
 </a>
 </div>
-<div class="mt-12 flex flex-wrap items-center gap-8 text-[10.5px] uppercase tracking-[0.24em] text-[#a09489]">
+<div class="mt-8 sm:mt-12 flex flex-wrap items-center gap-4 sm:gap-8 text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] sm:tracking-[0.24em] text-[#a09489]">
 <span class="flex items-center gap-2">
 <span class="w-1 h-1 rounded-full bg-gold-subtle"></span>
               Dedicated Senior Drape Master
@@ -641,9 +644,9 @@
 </div>
 </section>
 <!-- Craft Accreditation Bar -->
-<section class="w-full bg-surface-container-low border-b border-gold-border/40 py-16">
-<div class="max-w-[1720px] mx-auto px-margin-mobile md:px-margin">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+<section class="w-full bg-surface-container-low border-b border-gold-border/40 py-10 sm:py-14 lg:py-16">
+<div class="max-w-[1720px] mx-auto px-4 sm:px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-16">
 <div class="flex items-start gap-5">
 <div class="w-12 h-12 rounded-full border border-gold-border bg-surface flex items-center justify-center shrink-0 text-gold-antique">
 <span class="material-symbols-outlined text-[24px]">verified</span>
@@ -688,9 +691,9 @@
 </section>
 </main>
 <!-- Stately Haute Couture Footer -->
-<footer class="w-full bg-[#120f0d] text-[#eee7df] pt-20 pb-12 border-t border-[#29221d]">
-<div class="max-w-[1720px] mx-auto px-margin-mobile md:px-margin">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14 mb-16">
+<footer class="w-full bg-[#120f0d] text-[#eee7df] pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-12 border-t border-[#29221d]">
+<div class="max-w-[1720px] mx-auto px-4 sm:px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 mb-10 sm:mb-14 lg:mb-16">
 <!-- Atelier Story -->
 <div class="lg:col-span-4 pr-0 lg:pr-8">
 <div class="flex items-center gap-3 mb-4">
