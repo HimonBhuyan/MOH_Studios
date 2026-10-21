@@ -318,16 +318,16 @@ function renderSearchResults(query) {
   }
 
   container.innerHTML = matches.map(p => `
-    <a href="product.html?id=${p.id}" class="flex items-center gap-4 p-3 bg-white border border-[#e7c185]/30 hover:border-primary transition-all group">
-      <img src="${p.image}" alt="${p.title}" class="w-14 h-18 object-cover border border-[#e7c185]/40 flex-shrink-0" />
+    <a href="product.html?id=${p.id}" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-3.5 bg-[#2a2320] border border-[#e7c185]/25 hover:border-[#ffd799]/70 hover:bg-[#322a26] transition-all group">
+      <img src="${p.image}" alt="${p.title}" class="w-14 h-[72px] object-cover border border-[#e7c185]/30 flex-shrink-0" />
       <div class="flex-1 min-w-0">
-        <span class="text-[9px] uppercase tracking-widest text-secondary block">${p.category}</span>
-        <h4 class="font-editorial text-[17px] text-primary group-hover:text-secondary transition-colors truncate">${p.title}</h4>
-        <p class="text-[12px] text-outline font-light truncate">${p.fabric} · ${p.craft}</p>
+        <span class="text-[9px] uppercase tracking-widest text-[#ffd799] block mb-0.5">${p.category}</span>
+        <h4 class="font-editorial text-[16px] sm:text-[17px] text-white group-hover:text-[#ffd799] transition-colors truncate leading-tight">${p.title}</h4>
+        <p class="text-[11.5px] text-[#b8a898] font-light truncate mt-0.5">${p.fabric} · ${p.craft}</p>
       </div>
-      <div class="text-right flex-shrink-0">
-        <span class="text-[14px] font-semibold text-primary block">${formatPrice(p.price)}</span>
-        <span class="text-[9px] uppercase tracking-wider text-secondary">View Drape →</span>
+      <div class="text-right flex-shrink-0 pl-2">
+        <span class="text-[14px] font-semibold text-[#ffd799] block">${formatPrice(p.price)}</span>
+        <span class="text-[9px] uppercase tracking-wider text-white/50">View →</span>
       </div>
     </a>
   `).join('');
